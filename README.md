@@ -3,6 +3,15 @@
 ---
 
 ***导入微信支付API时libc++这个包一定要导入啊!!!虽然官方文档没说，但是有着血与泪的教训啊***
+      
+                      ***以下框架不分顺序导入***
+      libz.tbd
+      libsqlite3.0.tbd
+      libc++.tbd
+      Security.framework
+      CoreTelephony.framework
+      UIKit.framework
+      SystemConfiguration.framework
 
 ---
 ##第一步
