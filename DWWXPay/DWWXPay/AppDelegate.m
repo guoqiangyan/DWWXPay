@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "DWWXPay.h"
+#import "DWWXPayH.h"
 
 @interface AppDelegate ()
 
@@ -18,37 +18,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [[DWWXPay sharedManager] dw_RegisterApp:@"wx14ca19e6f0c43049" withDescription:@"cn.yzyclub.yzyclub"];
+    [[DWWXPay dw_sharedManager] dw_RegisterApp:@"appid" withDescription:@"你的项目Bundle Identifier"];
     
     return YES;
 }
 
 -(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
-    return [WXApi handleOpenURL:url delegate:self];
+    return [WXApi handleOpenURL:url delegate:[DWWXPay dw_sharedManager]];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    return [WXApi handleOpenURL:url delegate:self];
-}
-
--(void)onResp:(BaseResp*)resp{
-    if ([resp isKindOfClass:[PayResp class]]){
-        PayResp *response=(PayResp*)resp;
-        
-        switch(response.errCode){
-            case WXSuccess:
-                //服务器端查询支付通知或查询API返回的结果再提示成功
-                
-                
-                NSLog(@"支付成功");
-                
-                break;
-            default:
-                NSLog(@"支付失败，retcode=%d",resp.errCode);
-                
-                break;
-        }
-    }
+    return [WXApi handleOpenURL:url delegate:[DWWXPay dw_sharedManager]];
 }
 
 

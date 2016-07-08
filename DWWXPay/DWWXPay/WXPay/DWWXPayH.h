@@ -10,7 +10,6 @@
 #import "WXApi.h"
 #import "MJExtension.h"
 
-#import "WXPayUnifiedModels.h"
 #import "DWWXPaySuccessModels.h"
 #import "NSString+Extension.h"
 #import "DWWXPayXmlParser.h"
