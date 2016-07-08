@@ -17,6 +17,29 @@
 		4AA75D721D2F81F300D7E30A /* DWWXPayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75D711D2F81F300D7E30A /* DWWXPayTests.m */; };
 		4AA75D7D1D2F81F300D7E30A /* DWWXPayUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75D7C1D2F81F300D7E30A /* DWWXPayUITests.m */; };
 		4AA75D8F1D2F823E00D7E30A /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA75D8C1D2F823E00D7E30A /* libWeChatSDK.a */; };
+		4AA75D911D2F828B00D7E30A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA75D901D2F828B00D7E30A /* Security.framework */; };
+		4AA75D931D2F829600D7E30A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA75D921D2F829600D7E30A /* CoreTelephony.framework */; };
+		4AA75D951D2F829C00D7E30A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA75D941D2F829C00D7E30A /* SystemConfiguration.framework */; };
+		4AA75D971D2F82B400D7E30A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA75D961D2F82B400D7E30A /* libz.tbd */; };
+		4AA75D991D2F82C500D7E30A /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA75D981D2F82C500D7E30A /* libsqlite3.0.tbd */; };
+		4AA75D9B1D2F82CC00D7E30A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA75D9A1D2F82CC00D7E30A /* UIKit.framework */; };
+		4AA75D9D1D2F82D900D7E30A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA75D9C1D2F82D900D7E30A /* Foundation.framework */; };
+		4AA75DA21D2F833A00D7E30A /* DWWXPay.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DA11D2F833A00D7E30A /* DWWXPay.m */; };
+		4AA75DA51D2F85F800D7E30A /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA75DA41D2F85F800D7E30A /* libc++.tbd */; };
+		4AA75DA81D2F86F300D7E30A /* WXPayUnifiedModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DA71D2F86F300D7E30A /* WXPayUnifiedModels.m */; };
+		4AA75DAC1D2F894400D7E30A /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DAB1D2F894400D7E30A /* NSString+Extension.m */; };
+		4AA75DB01D2F8D4C00D7E30A /* DWWXPayXmlParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DAF1D2F8D4C00D7E30A /* DWWXPayXmlParser.m */; };
+		4AA75DB31D2F90FE00D7E30A /* DWWXPaySuccessModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DB21D2F90FE00D7E30A /* DWWXPaySuccessModels.m */; };
+		4AA75DCA1D2F918200D7E30A /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DB71D2F918200D7E30A /* MJExtensionConst.m */; };
+		4AA75DCB1D2F918200D7E30A /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DB91D2F918200D7E30A /* MJFoundation.m */; };
+		4AA75DCC1D2F918200D7E30A /* MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DBB1D2F918200D7E30A /* MJProperty.m */; };
+		4AA75DCD1D2F918200D7E30A /* MJPropertyKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DBD1D2F918200D7E30A /* MJPropertyKey.m */; };
+		4AA75DCE1D2F918200D7E30A /* MJPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DBF1D2F918200D7E30A /* MJPropertyType.m */; };
+		4AA75DCF1D2F918200D7E30A /* NSObject+MJClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DC11D2F918200D7E30A /* NSObject+MJClass.m */; };
+		4AA75DD01D2F918200D7E30A /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DC31D2F918200D7E30A /* NSObject+MJCoding.m */; };
+		4AA75DD11D2F918200D7E30A /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DC51D2F918200D7E30A /* NSObject+MJKeyValue.m */; };
+		4AA75DD21D2F918200D7E30A /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DC71D2F918200D7E30A /* NSObject+MJProperty.m */; };
+		4AA75DD31D2F918200D7E30A /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DC91D2F918200D7E30A /* NSString+MJExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +80,46 @@
 		4AA75D8C1D2F823E00D7E30A /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		4AA75D8D1D2F823E00D7E30A /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		4AA75D8E1D2F823E00D7E30A /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		4AA75D901D2F828B00D7E30A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		4AA75D921D2F829600D7E30A /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		4AA75D941D2F829C00D7E30A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4AA75D961D2F82B400D7E30A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		4AA75D981D2F82C500D7E30A /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		4AA75D9A1D2F82CC00D7E30A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4AA75D9C1D2F82D900D7E30A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4AA75DA01D2F833A00D7E30A /* DWWXPay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWWXPay.h; sourceTree = "<group>"; };
+		4AA75DA11D2F833A00D7E30A /* DWWXPay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWWXPay.m; sourceTree = "<group>"; };
+		4AA75DA41D2F85F800D7E30A /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		4AA75DA61D2F86F300D7E30A /* WXPayUnifiedModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXPayUnifiedModels.h; sourceTree = "<group>"; };
+		4AA75DA71D2F86F300D7E30A /* WXPayUnifiedModels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXPayUnifiedModels.m; sourceTree = "<group>"; };
+		4AA75DAA1D2F894400D7E30A /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		4AA75DAB1D2F894400D7E30A /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		4AA75DAE1D2F8D4C00D7E30A /* DWWXPayXmlParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWWXPayXmlParser.h; sourceTree = "<group>"; };
+		4AA75DAF1D2F8D4C00D7E30A /* DWWXPayXmlParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWWXPayXmlParser.m; sourceTree = "<group>"; };
+		4AA75DB11D2F90FE00D7E30A /* DWWXPaySuccessModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWWXPaySuccessModels.h; sourceTree = "<group>"; };
+		4AA75DB21D2F90FE00D7E30A /* DWWXPaySuccessModels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWWXPaySuccessModels.m; sourceTree = "<group>"; };
+		4AA75DB51D2F918200D7E30A /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
+		4AA75DB61D2F918200D7E30A /* MJExtensionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionConst.h; sourceTree = "<group>"; };
+		4AA75DB71D2F918200D7E30A /* MJExtensionConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionConst.m; sourceTree = "<group>"; };
+		4AA75DB81D2F918200D7E30A /* MJFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJFoundation.h; sourceTree = "<group>"; };
+		4AA75DB91D2F918200D7E30A /* MJFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJFoundation.m; sourceTree = "<group>"; };
+		4AA75DBA1D2F918200D7E30A /* MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJProperty.h; sourceTree = "<group>"; };
+		4AA75DBB1D2F918200D7E30A /* MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJProperty.m; sourceTree = "<group>"; };
+		4AA75DBC1D2F918200D7E30A /* MJPropertyKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyKey.h; sourceTree = "<group>"; };
+		4AA75DBD1D2F918200D7E30A /* MJPropertyKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPropertyKey.m; sourceTree = "<group>"; };
+		4AA75DBE1D2F918200D7E30A /* MJPropertyType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyType.h; sourceTree = "<group>"; };
+		4AA75DBF1D2F918200D7E30A /* MJPropertyType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPropertyType.m; sourceTree = "<group>"; };
+		4AA75DC01D2F918200D7E30A /* NSObject+MJClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJClass.h"; sourceTree = "<group>"; };
+		4AA75DC11D2F918200D7E30A /* NSObject+MJClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJClass.m"; sourceTree = "<group>"; };
+		4AA75DC21D2F918200D7E30A /* NSObject+MJCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJCoding.h"; sourceTree = "<group>"; };
+		4AA75DC31D2F918200D7E30A /* NSObject+MJCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJCoding.m"; sourceTree = "<group>"; };
+		4AA75DC41D2F918200D7E30A /* NSObject+MJKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJKeyValue.h"; sourceTree = "<group>"; };
+		4AA75DC51D2F918200D7E30A /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
+		4AA75DC61D2F918200D7E30A /* NSObject+MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJProperty.h"; sourceTree = "<group>"; };
+		4AA75DC71D2F918200D7E30A /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
+		4AA75DC81D2F918200D7E30A /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
+		4AA75DC91D2F918200D7E30A /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
+		4AA75DDA1D2F958600D7E30A /* DWWXPayH.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWWXPayH.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +127,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AA75DA51D2F85F800D7E30A /* libc++.tbd in Frameworks */,
+				4AA75D991D2F82C500D7E30A /* libsqlite3.0.tbd in Frameworks */,
+				4AA75D971D2F82B400D7E30A /* libz.tbd in Frameworks */,
+				4AA75D9B1D2F82CC00D7E30A /* UIKit.framework in Frameworks */,
+				4AA75D9D1D2F82D900D7E30A /* Foundation.framework in Frameworks */,
+				4AA75D951D2F829C00D7E30A /* SystemConfiguration.framework in Frameworks */,
+				4AA75D931D2F829600D7E30A /* CoreTelephony.framework in Frameworks */,
+				4AA75D911D2F828B00D7E30A /* Security.framework in Frameworks */,
 				4AA75D8F1D2F823E00D7E30A /* libWeChatSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,6 +159,7 @@
 		4AA75D481D2F81F200D7E30A = {
 			isa = PBXGroup;
 			children = (
+				4AA75D9E1D2F82FA00D7E30A /* Framework */,
 				4AA75D531D2F81F200D7E30A /* DWWXPay */,
 				4AA75D701D2F81F300D7E30A /* DWWXPayTests */,
 				4AA75D7B1D2F81F300D7E30A /* DWWXPayUITests */,
@@ -152,7 +224,14 @@
 		4AA75D8A1D2F821700D7E30A /* WXPay */ = {
 			isa = PBXGroup;
 			children = (
+				4AA75DB41D2F918200D7E30A /* MJExtension */,
+				4AA75DAD1D2F8D1B00D7E30A /* WXPayXML */,
+				4AA75DA91D2F872400D7E30A /* WXPayString */,
+				4AA75DA31D2F845C00D7E30A /* WXPayModels */,
 				4AA75D8B1D2F823E00D7E30A /* SDKExport */,
+				4AA75DA01D2F833A00D7E30A /* DWWXPay.h */,
+				4AA75DA11D2F833A00D7E30A /* DWWXPay.m */,
+				4AA75DDA1D2F958600D7E30A /* DWWXPayH.h */,
 			);
 			path = WXPay;
 			sourceTree = "<group>";
@@ -165,6 +244,78 @@
 				4AA75D8E1D2F823E00D7E30A /* WXApiObject.h */,
 			);
 			path = SDKExport;
+			sourceTree = "<group>";
+		};
+		4AA75D9E1D2F82FA00D7E30A /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				4AA75DA41D2F85F800D7E30A /* libc++.tbd */,
+				4AA75D961D2F82B400D7E30A /* libz.tbd */,
+				4AA75D981D2F82C500D7E30A /* libsqlite3.0.tbd */,
+				4AA75D901D2F828B00D7E30A /* Security.framework */,
+				4AA75D921D2F829600D7E30A /* CoreTelephony.framework */,
+				4AA75D941D2F829C00D7E30A /* SystemConfiguration.framework */,
+				4AA75D9A1D2F82CC00D7E30A /* UIKit.framework */,
+				4AA75D9C1D2F82D900D7E30A /* Foundation.framework */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+		4AA75DA31D2F845C00D7E30A /* WXPayModels */ = {
+			isa = PBXGroup;
+			children = (
+				4AA75DA61D2F86F300D7E30A /* WXPayUnifiedModels.h */,
+				4AA75DA71D2F86F300D7E30A /* WXPayUnifiedModels.m */,
+				4AA75DB11D2F90FE00D7E30A /* DWWXPaySuccessModels.h */,
+				4AA75DB21D2F90FE00D7E30A /* DWWXPaySuccessModels.m */,
+			);
+			path = WXPayModels;
+			sourceTree = "<group>";
+		};
+		4AA75DA91D2F872400D7E30A /* WXPayString */ = {
+			isa = PBXGroup;
+			children = (
+				4AA75DAA1D2F894400D7E30A /* NSString+Extension.h */,
+				4AA75DAB1D2F894400D7E30A /* NSString+Extension.m */,
+			);
+			path = WXPayString;
+			sourceTree = "<group>";
+		};
+		4AA75DAD1D2F8D1B00D7E30A /* WXPayXML */ = {
+			isa = PBXGroup;
+			children = (
+				4AA75DAE1D2F8D4C00D7E30A /* DWWXPayXmlParser.h */,
+				4AA75DAF1D2F8D4C00D7E30A /* DWWXPayXmlParser.m */,
+			);
+			path = WXPayXML;
+			sourceTree = "<group>";
+		};
+		4AA75DB41D2F918200D7E30A /* MJExtension */ = {
+			isa = PBXGroup;
+			children = (
+				4AA75DB51D2F918200D7E30A /* MJExtension.h */,
+				4AA75DB61D2F918200D7E30A /* MJExtensionConst.h */,
+				4AA75DB71D2F918200D7E30A /* MJExtensionConst.m */,
+				4AA75DB81D2F918200D7E30A /* MJFoundation.h */,
+				4AA75DB91D2F918200D7E30A /* MJFoundation.m */,
+				4AA75DBA1D2F918200D7E30A /* MJProperty.h */,
+				4AA75DBB1D2F918200D7E30A /* MJProperty.m */,
+				4AA75DBC1D2F918200D7E30A /* MJPropertyKey.h */,
+				4AA75DBD1D2F918200D7E30A /* MJPropertyKey.m */,
+				4AA75DBE1D2F918200D7E30A /* MJPropertyType.h */,
+				4AA75DBF1D2F918200D7E30A /* MJPropertyType.m */,
+				4AA75DC01D2F918200D7E30A /* NSObject+MJClass.h */,
+				4AA75DC11D2F918200D7E30A /* NSObject+MJClass.m */,
+				4AA75DC21D2F918200D7E30A /* NSObject+MJCoding.h */,
+				4AA75DC31D2F918200D7E30A /* NSObject+MJCoding.m */,
+				4AA75DC41D2F918200D7E30A /* NSObject+MJKeyValue.h */,
+				4AA75DC51D2F918200D7E30A /* NSObject+MJKeyValue.m */,
+				4AA75DC61D2F918200D7E30A /* NSObject+MJProperty.h */,
+				4AA75DC71D2F918200D7E30A /* NSObject+MJProperty.m */,
+				4AA75DC81D2F918200D7E30A /* NSString+MJExtension.h */,
+				4AA75DC91D2F918200D7E30A /* NSString+MJExtension.m */,
+			);
+			path = MJExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,9 +449,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AA75D621D2F81F300D7E30A /* DWWXPay.xcdatamodeld in Sources */,
+				4AA75DD21D2F918200D7E30A /* NSObject+MJProperty.m in Sources */,
+				4AA75DCB1D2F918200D7E30A /* MJFoundation.m in Sources */,
+				4AA75DA21D2F833A00D7E30A /* DWWXPay.m in Sources */,
+				4AA75DCF1D2F918200D7E30A /* NSObject+MJClass.m in Sources */,
+				4AA75DD31D2F918200D7E30A /* NSString+MJExtension.m in Sources */,
+				4AA75DA81D2F86F300D7E30A /* WXPayUnifiedModels.m in Sources */,
 				4AA75D5C1D2F81F200D7E30A /* ViewController.m in Sources */,
+				4AA75DCE1D2F918200D7E30A /* MJPropertyType.m in Sources */,
+				4AA75DD11D2F918200D7E30A /* NSObject+MJKeyValue.m in Sources */,
 				4AA75D591D2F81F200D7E30A /* AppDelegate.m in Sources */,
 				4AA75D561D2F81F200D7E30A /* main.m in Sources */,
+				4AA75DCC1D2F918200D7E30A /* MJProperty.m in Sources */,
+				4AA75DCA1D2F918200D7E30A /* MJExtensionConst.m in Sources */,
+				4AA75DB31D2F90FE00D7E30A /* DWWXPaySuccessModels.m in Sources */,
+				4AA75DD01D2F918200D7E30A /* NSObject+MJCoding.m in Sources */,
+				4AA75DAC1D2F894400D7E30A /* NSString+Extension.m in Sources */,
+				4AA75DCD1D2F918200D7E30A /* MJPropertyKey.m in Sources */,
+				4AA75DB01D2F8D4C00D7E30A /* DWWXPayXmlParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
