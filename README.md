@@ -12,6 +12,7 @@
       CoreTelephony.framework
       UIKit.framework
       SystemConfiguration.framework
+      Foundation.framework
 
 ---
 ##第一步
