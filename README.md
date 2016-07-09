@@ -24,6 +24,7 @@
      [[DWWXPay dw_sharedManager] dw_RegisterApp:@"你的appid" withDescription:@"你的项目Bundle Identifier"];
      
 ---
+>#在AppDelegate.m中添加以下两个方法
      -(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
     return [WXApi handleOpenURL:url delegate:[DWWXPay dw_sharedManager]];
     }
