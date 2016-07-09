@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [[DWWXPay dw_sharedManager] dw_RegisterApp:@"appid" withDescription:@"你的项目Bundle Identifier"];
+    [[DWWXPay dw_sharedManager] dw_RegisterApp:@"微信分配的appid" withDescription:@"你的项目Bundle Identifier"];
     
     return YES;
 }
@@ -30,7 +30,6 @@
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     return [WXApi handleOpenURL:url delegate:[DWWXPay dw_sharedManager]];
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

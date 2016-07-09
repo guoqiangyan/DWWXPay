@@ -13,6 +13,7 @@
       UIKit.framework
       SystemConfiguration.framework
       Foundation.framework
+      CFNetwork.framework
 
 ---
 ##第一步
