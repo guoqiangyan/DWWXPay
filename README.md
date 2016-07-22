@@ -42,9 +42,9 @@
      [[DWWXPay dw_sharedManager] dw_RegisterApp:@"你的appid" withDescription:@"你的项目Bundle Identifier"];
      
 ---
->#在AppDelegate.m中添加以下两个方法
+>#在AppDelegate.m中添加以下三个方法
      -(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
-    return [WXApi handleOpenURL:url delegate:[DWWXPay dw_sharedManager]];
+          return [WXApi handleOpenURL:url delegate:[DWWXPay dw_sharedManager]];
     }
 ---
     - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
@@ -52,6 +52,10 @@
     }
 
 ---
+     //此方法是由于系统版本更新而出现的方法
+     - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary*)options{
+          return [WXApi handleOpenURL:url delegate:[DWWXPay dw_sharedManager]];
+     }
 ---
 #第二步
     在需要使用微信支付的地方导入头文件
