@@ -84,7 +84,7 @@
         
         [self.payMoeny setTitle:[NSString stringWithFormat:@"%@",backCode] forState:UIControlStateNormal];
         
-    } returnedMoney:^(NSString *returnedMoney) {
+    } returnedMoneyMsg:^(NSString *returnedMoneyMsg) {
         
         
     }];
@@ -112,9 +112,10 @@
         
           NSLog(@"微信支付返回结果为:%@",backCode);
         
-    } returnedMoney:^(NSString *returnedMoney) {
+    } returnedMoneyMsg:^(NSString *returnedMoneyMsg) {
         
-        [self.returnedMoney setTitle:[NSString stringWithFormat:@"%@",returnedMoney] forState:UIControlStateNormal];
+                NSLog(@"微信申请退款返回内容为:%@",returnedMoneyMsg);
+        [self.returnedMoney setTitle:[NSString stringWithFormat:@"%@",returnedMoneyMsg] forState:UIControlStateNormal];
         
     }];
     

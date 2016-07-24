@@ -18,8 +18,9 @@ typedef void(^BackCode)(NSString *backCode);
 typedef void(^BackResp)(BaseResp *backResp);
 
 /** 微信退款申请发送成功的回调 */
-typedef void(^ReturnedMoney)(NSString *returnedMoney);
+typedef void(^ReturnedMoneyMsg)(NSString *returnedMoneyMsg);
 
+/** 微信返回的错误信息 */
 typedef void(^Return_ErrorCode)(NSString *return_msg, NSString *err_code, NSString *err_code_des);
 
 @property (copy, nonatomic) NSString *partnerKey;
@@ -28,7 +29,7 @@ typedef void(^Return_ErrorCode)(NSString *return_msg, NSString *err_code, NSStri
 
 @property (copy, nonatomic) BackResp backResp;
 
-@property (copy, nonatomic) ReturnedMoney returnedMoney;
+@property (copy, nonatomic) ReturnedMoneyMsg returnedMoneyMsg;
 
 @property (copy, nonatomic) Return_ErrorCode return_ErrorCode;
 
@@ -99,7 +100,7 @@ typedef void(^Return_ErrorCode)(NSString *return_msg, NSString *err_code, NSStri
  *  @param returnedMoney    申请退款结果的回调
  *
  *  @since <#version number#>
- */- (void)dw_post:(NSString*)url xml:(NSString*)xml return_ErrorCode:(Return_ErrorCode)return_ErrorCode backResp:(BackResp)backResp backCode:(BackCode)backCode returnedMoney:(ReturnedMoney)returnedMoney;
+ */- (void)dw_post:(NSString*)url xml:(NSString*)xml return_ErrorCode:(Return_ErrorCode)return_ErrorCode backResp:(BackResp)backResp backCode:(BackCode)backCode returnedMoneyMsg:(ReturnedMoneyMsg)returnedMoneyMsg;
 
 
 @end

@@ -96,7 +96,7 @@ static DWWXPay *sharedManager = nil;
     
 }
 
-- (void)dw_post:(NSString*)url xml:(NSString*)xml return_ErrorCode:(Return_ErrorCode)return_ErrorCode backResp:(BackResp)backResp backCode:(BackCode)backCode returnedMoney:(ReturnedMoney)returnedMoney{
+- (void)dw_post:(NSString*)url xml:(NSString*)xml return_ErrorCode:(Return_ErrorCode)return_ErrorCode backResp:(BackResp)backResp backCode:(BackCode)backCode returnedMoneyMsg:(ReturnedMoneyMsg)returnedMoneyMsg{
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:12];
     
@@ -120,9 +120,9 @@ static DWWXPay *sharedManager = nil;
                 
                 if ([url isEqualToString:@"https://api.mch.weixin.qq.com/secapi/pay/refund"]) {
                     
-                    if (!returnedMoney) {
+                    if (!returnedMoneyMsg) {
                         
-                        returnedMoney(@"退款申请成功");
+                        returnedMoneyMsg(@"退款申请成功");
                         
                     }
                     
@@ -161,9 +161,9 @@ static DWWXPay *sharedManager = nil;
                     
                     if ([url isEqualToString:@"https://api.mch.weixin.qq.com/secapi/pay/refund"]) {
                         
-                        if (!returnedMoney) {
+                        if (!returnedMoneyMsg) {
                             
-                            returnedMoney(@"退款申请失败");
+                            returnedMoneyMsg(@"退款申请失败");
                             
                         }
                         
