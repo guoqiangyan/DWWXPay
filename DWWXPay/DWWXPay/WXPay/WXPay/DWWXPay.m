@@ -116,7 +116,7 @@ static DWWXPay *sharedManager = nil;
             
             DWWXPaySuccessModels *paySuccessModels = [DWWXPaySuccessModels mj_objectWithKeyValues:respParams];
             
-            if ([paySuccessModels.return_code isEqualToString:@"SUCCESS"] && !paySuccessModels.return_msg) {
+            if ([paySuccessModels.return_code isEqualToString:@"SUCCESS"]) {
                 
                 if ([url isEqualToString:@"https://api.mch.weixin.qq.com/secapi/pay/refund"]) {
                     
