@@ -184,7 +184,7 @@
 }
 
 
-+ (NSString *) dw_GetXmlAppid:(NSString *)appid Mch_id:(NSString *)mch_id Nonce_str:(NSString *)nonce_str Sign:(NSString *)sign Body:(NSString *)body Out_trade_no:(NSString *)out_trade_no Total_fee:(int)total_fee Spbill_create_ip:(NSString *)spbill_create_ip Notify_url:(NSString *)notify_url Trade_type:(NSString *)trade_type {
++ (NSString *) dw_payMoenyGetXmlAppid:(NSString *)appid Mch_id:(NSString *)mch_id Nonce_str:(NSString *)nonce_str Sign:(NSString *)sign Body:(NSString *)body Out_trade_no:(NSString *)out_trade_no Total_fee:(int)total_fee Spbill_create_ip:(NSString *)spbill_create_ip Notify_url:(NSString *)notify_url Trade_type:(NSString *)trade_type {
     
     NSString *xmlString = [NSString stringWithFormat:@"<xml><appid>%@</appid><body>%@</body><mch_id>%@</mch_id><nonce_str>%@</nonce_str><notify_url>%@</notify_url><out_trade_no>%@</out_trade_no><spbill_create_ip>%@</spbill_create_ip><total_fee>%d</total_fee><trade_type>%@</trade_type><sign>%@</sign></xml>",
                            appid,
@@ -202,5 +202,20 @@
     
 }
 
++ (NSString *)dw_returnedMoneyGetXmlAppid:(NSString *)appid Mch_id:(NSString *)mch_id Nonce_str:(NSString *)nonce_str Op_user_id:(NSString *)op_user_id Out_refund_no:(NSString *)out_refund_no Out_trade_no:(NSString *)out_trade_no Refund_fee:(int)refund_fee Total_fee:(int)total_fee Sign:(NSString *)sign {
+    
+    NSString *xmlString = [NSString stringWithFormat:@"<xml><appid>%@</appid><mch_id>%@</mch_id><nonce_str>%@</nonce_str><op_user_id>%@</op_user_id><out_refund_no>%@</out_refund_no><out_trade_no>%@</out_trade_no><refund_fee>%d</refund_fee><total_fee>%d</total_fee><sign>%@</sign></xml>",
+                           appid,
+                           mch_id,
+                           nonce_str,
+                           op_user_id,
+                           out_refund_no,
+                           out_trade_no,
+                           refund_fee,
+                           total_fee,
+                           sign];
+    
+    return [NSString stringWithString:xmlString];
+}
 
 @end
