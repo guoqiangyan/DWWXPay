@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3530C2791D2FD78A009E6D0E /* DWWXPay.m in Sources */ = {isa = PBXBuildFile; fileRef = 3530C2781D2FD78A009E6D0E /* DWWXPay.m */; };
 		3530C27E1D2FD88D009E6D0E /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3530C27B1D2FD88D009E6D0E /* libWeChatSDK.a */; };
+		355BF4F21D44B8FC007C49D5 /* libcurses.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 355BF4F11D44B8FC007C49D5 /* libcurses.tbd */; };
 		4AA75D561D2F81F200D7E30A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75D551D2F81F200D7E30A /* main.m */; };
 		4AA75D591D2F81F200D7E30A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75D581D2F81F200D7E30A /* AppDelegate.m */; };
 		4AA75D5C1D2F81F200D7E30A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75D5B1D2F81F200D7E30A /* ViewController.m */; };
@@ -64,6 +65,7 @@
 		3530C27B1D2FD88D009E6D0E /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		3530C27C1D2FD88D009E6D0E /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		3530C27D1D2FD88D009E6D0E /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		355BF4F11D44B8FC007C49D5 /* libcurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurses.tbd; path = usr/lib/libcurses.tbd; sourceTree = SDKROOT; };
 		4AA75D511D2F81F200D7E30A /* DWWXPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DWWXPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AA75D551D2F81F200D7E30A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4AA75D571D2F81F200D7E30A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				355BF4F21D44B8FC007C49D5 /* libcurses.tbd in Frameworks */,
 				4AA75DA51D2F85F800D7E30A /* libc++.tbd in Frameworks */,
 				4AA75D991D2F82C500D7E30A /* libsqlite3.0.tbd in Frameworks */,
 				3530C27E1D2FD88D009E6D0E /* libWeChatSDK.a in Frameworks */,
@@ -254,6 +257,7 @@
 		4AA75D9E1D2F82FA00D7E30A /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				355BF4F11D44B8FC007C49D5 /* libcurses.tbd */,
 				4AA75DA41D2F85F800D7E30A /* libc++.tbd */,
 				4AA75D961D2F82B400D7E30A /* libz.tbd */,
 				4AA75D981D2F82C500D7E30A /* libsqlite3.0.tbd */,

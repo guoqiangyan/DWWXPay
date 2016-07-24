@@ -42,6 +42,4 @@
 /** 获取付款XML字符串 */
 + (NSString *)dw_payMoenyGetXmlAppid:(NSString *)appid Mch_id:(NSString *)mch_id Nonce_str:(NSString *)nonce_str Sign:(NSString *)sign Body:(NSString *)body Out_trade_no:(NSString *)out_trade_no Total_fee:(int)total_fee Spbill_create_ip:(NSString *)spbill_create_ip Notify_url:(NSString *)notify_url Trade_type:(NSString *)trade_type;
 
-/** 获取退款XML字符串 */
-+ (NSString *)dw_returnedMoneyGetXmlAppid:(NSString *)appid Mch_id:(NSString *)mch_id Nonce_str:(NSString *)nonce_str Op_user_id:(NSString *)op_user_id Out_refund_no:(NSString *)out_refund_no Out_trade_no:(NSString *)out_trade_no Refund_fee:(int)refund_fee Total_fee:(int)total_fee Sign:(NSString *)sign;
 @end

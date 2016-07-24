@@ -202,20 +202,4 @@
     
 }
 
-+ (NSString *)dw_returnedMoneyGetXmlAppid:(NSString *)appid Mch_id:(NSString *)mch_id Nonce_str:(NSString *)nonce_str Op_user_id:(NSString *)op_user_id Out_refund_no:(NSString *)out_refund_no Out_trade_no:(NSString *)out_trade_no Refund_fee:(int)refund_fee Total_fee:(int)total_fee Sign:(NSString *)sign {
-    
-    NSString *xmlString = [NSString stringWithFormat:@"<xml><appid>%@</appid><mch_id>%@</mch_id><nonce_str>%@</nonce_str><op_user_id>%@</op_user_id><out_refund_no>%@</out_refund_no><out_trade_no>%@</out_trade_no><refund_fee>%d</refund_fee><total_fee>%d</total_fee><sign>%@</sign></xml>",
-                           appid,
-                           mch_id,
-                           nonce_str,
-                           op_user_id,
-                           out_refund_no,
-                           out_trade_no,
-                           refund_fee,
-                           total_fee,
-                           sign];
-    
-    return [NSString stringWithString:xmlString];
-}
-
 @end

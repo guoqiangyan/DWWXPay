@@ -71,32 +71,8 @@ static DWWXPay *sharedManager = nil;
     
 }
 
-- (NSString *)dw_returnedMoneySetAppid:(NSString *)appid Mch_id:(NSString *)mch_id PartnerKey:(NSString *)partnerKey Out_trade_no:(NSString *)out_trade_no Out_refund_no:(NSString *)out_refund_no Total_fee:(int)total_fee Refund_fee:(int)refund_fee Op_user_id:(NSString *)op_user_id {
-    
-     NSString *nonce_str =  [NSString dw_getNonce_str];
-    
-    NSString *stringA = [NSString stringWithFormat:
-                         @"appid=%@&mch_id=%@&nonce_str=%@&op_user_id=%@&out_refund_no=%@&out_trade_no=%@&refund_fee=%d&total_fee=%d",
-                         appid,
-                         mch_id,
-                         nonce_str,
-                         op_user_id,
-                         out_refund_no,
-                         out_trade_no,
-                         refund_fee,
-                         total_fee];
-    
-    NSString *stringSignTemp = [NSString stringWithFormat:@"%@&key=%@",stringA,partnerKey];
-    
-    NSString *sign = [NSString dw_md5String:stringSignTemp];
-    
-    NSString *xmlString = [NSString dw_returnedMoneyGetXmlAppid:appid Mch_id:mch_id Nonce_str:nonce_str Op_user_id:op_user_id Out_refund_no:out_refund_no Out_trade_no:out_trade_no Refund_fee:refund_fee Total_fee:total_fee Sign:sign];
-    
-    return xmlString;
-    
-}
 
-- (void)dw_post:(NSString*)url xml:(NSString*)xml return_ErrorCode:(Return_ErrorCode)return_ErrorCode backResp:(BackResp)backResp backCode:(BackCode)backCode returnedMoneyMsg:(ReturnedMoneyMsg)returnedMoneyMsg{
+- (void)dw_post:(NSString*)url xml:(NSString*)xml return_ErrorCode:(Return_ErrorCode)return_ErrorCode backResp:(BackResp)backResp backCode:(BackCode)backCode {
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:12];
     
@@ -117,18 +93,6 @@ static DWWXPay *sharedManager = nil;
             DWWXPaySuccessModels *paySuccessModels = [DWWXPaySuccessModels mj_objectWithKeyValues:respParams];
             
             if ([paySuccessModels.return_code isEqualToString:@"SUCCESS"]) {
-                
-                if ([url isEqualToString:@"https://api.mch.weixin.qq.com/secapi/pay/refund"]) {
-                    
-                    if (!returnedMoneyMsg) {
-                        
-                        returnedMoneyMsg(@"退款申请成功");
-                        
-                    }
-                    
-                    return;
-                    
-                }
                 
                 PayReq *request = [[PayReq alloc] init];
                 
@@ -158,18 +122,6 @@ static DWWXPay *sharedManager = nil;
                 if (self.return_ErrorCode) {
                     
                     self.return_ErrorCode(paySuccessModels.return_msg,paySuccessModels.err_code,paySuccessModels.err_code_des);
-                    
-                    if ([url isEqualToString:@"https://api.mch.weixin.qq.com/secapi/pay/refund"]) {
-                        
-                        if (!returnedMoneyMsg) {
-                            
-                            returnedMoneyMsg(@"退款申请失败");
-                            
-                        }
-                        
-                        return;
-                        
-                    }
                     
                 }
                 

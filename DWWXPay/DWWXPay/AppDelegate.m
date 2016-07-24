@@ -24,11 +24,15 @@
 }
 
 -(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+    
     return [WXApi handleOpenURL:url delegate:[DWWXPay dw_sharedManager]];
+
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    
     return [WXApi handleOpenURL:url delegate:[DWWXPay dw_sharedManager]];
+
 }
 
 //此方法是由于系统版本更新而出现的方法

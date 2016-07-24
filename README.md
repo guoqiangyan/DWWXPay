@@ -62,7 +62,7 @@
 ---    
 
 #*在开始支付时调用以下代码*
-     NSString *xmlString = [pay dw_setAppid:@"appid" Mch_id:@"商户id" PartnerKey:@"密钥" Body:@"商品信息" Out_trade_no:@"订单号" total_fee:1 Notify_url:@"回调地址" Trade_type:@"类型"];
+     NSString *xmlString = [pay dw_payMoenySetAppid:@"appid" Mch_id:@"商户id" PartnerKey:@"密钥" Body:@"商品信息" Out_trade_no:@"订单号" total_fee:1 Notify_url:@"回调地址" Trade_type:@"类型"];
     
 ----
     [pay dw_post:@"https://api.mch.weixin.qq.com/pay/unifiedorder" xml:xmlString return_ErrorCode:^(NSString *return_msg, NSString *err_code, NSString *err_code_des) {
