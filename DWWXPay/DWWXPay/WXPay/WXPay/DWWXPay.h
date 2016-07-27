@@ -20,7 +20,7 @@ typedef void(^BackResp)(BaseResp *backResp);
 /** 微信返回的错误信息 */
 typedef void(^Return_ErrorCode)(NSString *return_msg, NSString *err_code, NSString *err_code_des);
 
-/** 微信返回的交易状态信息 */
+/** 微信返回的交易订单状态信息 */
 typedef void(^BackTrade_stateMsg)(NSString *backTrade_stateMsg, NSString *backTrade_state);
 
 @property (copy, nonatomic) NSString *partnerKey;
