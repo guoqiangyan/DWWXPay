@@ -35,6 +35,8 @@
 
 ---
 ##第一步
+    将DEMO中的WXPay文件夹导入到项目中
+    ---
     在AppDelegate中导入头文件
     #import "DWWXPayH.h"
 ---
