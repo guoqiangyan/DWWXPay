@@ -78,10 +78,7 @@
         
         [self.payMoeny setTitle:[NSString stringWithFormat:@"%@",backCode] forState:UIControlStateNormal];
         
-    } BackTrade_stateMsg:^(NSString *backTrade_stateMsg, NSString *backTrade_state) {
-        
-        
-    }];
+    } BackTrade_stateMsg:^(NSString *backTrade_stateMsg, NSString *backTrade_state) {}];
     
 }
 
@@ -104,6 +101,8 @@
     }BackTrade_stateMsg:^(NSString *backTrade_stateMsg, NSString *backTrade_state) {
         
         NSLog(@"返回订单状态%@------返回订单状态码%@",backTrade_stateMsg,backTrade_state);
+        
+        [self.queryOrder setTitle:backTrade_stateMsg forState:UIControlStateNormal];
         
     }];
     
