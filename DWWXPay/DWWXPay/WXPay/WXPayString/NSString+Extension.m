@@ -184,7 +184,7 @@
 }
 
 
-+ (NSString *) dw_payMoenyGetXmlAppid:(NSString *)appid Mch_id:(NSString *)mch_id Nonce_str:(NSString *)nonce_str Sign:(NSString *)sign Body:(NSString *)body Out_trade_no:(NSString *)out_trade_no Total_fee:(int)total_fee Spbill_create_ip:(NSString *)spbill_create_ip Notify_url:(NSString *)notify_url Trade_type:(NSString *)trade_type {
++ (NSString *)dw_payMoenyGetXmlAppid:(NSString *)appid Mch_id:(NSString *)mch_id Nonce_str:(NSString *)nonce_str Sign:(NSString *)sign Body:(NSString *)body Out_trade_no:(NSString *)out_trade_no Total_fee:(int)total_fee Spbill_create_ip:(NSString *)spbill_create_ip Notify_url:(NSString *)notify_url Trade_type:(NSString *)trade_type {
     
     NSString *xmlString = [NSString stringWithFormat:@"<xml><appid>%@</appid><body>%@</body><mch_id>%@</mch_id><nonce_str>%@</nonce_str><notify_url>%@</notify_url><out_trade_no>%@</out_trade_no><spbill_create_ip>%@</spbill_create_ip><total_fee>%d</total_fee><trade_type>%@</trade_type><sign>%@</sign></xml>",
                            appid,
@@ -200,6 +200,19 @@
     
     return [NSString stringWithString:xmlString];
     
+}
+
++ (NSString *)dw_queryOrderGetXmlAppid:(NSString *)appid Mch_id:(NSString *)mch_id Nonce_str:(NSString *)nonce_str Out_trade_no:(NSString *)out_trade_no Sign:(NSString *)sign {
+    
+    NSString *xmlString = [NSString stringWithFormat:@"<xml><appid>%@</appid><mch_id>%@</mch_id><nonce_str>%@</nonce_str><out_trade_no>%@</out_trade_no><sign>%@</sign></xml>",
+                           appid,
+                           mch_id,
+                           nonce_str,
+                           out_trade_no,
+                           sign];
+    
+    
+    return [NSString stringWithString:xmlString];
 }
 
 @end

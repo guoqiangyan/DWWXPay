@@ -73,4 +73,9 @@
  */
 @property (copy, nonatomic) NSString *prepay_id;
 
+/**
+ *  交易状态
+ */
+@property (copy, nonatomic) NSString *trade_state;
+
 @end

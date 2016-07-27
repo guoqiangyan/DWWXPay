@@ -20,6 +20,9 @@ typedef void(^BackResp)(BaseResp *backResp);
 /** 微信返回的错误信息 */
 typedef void(^Return_ErrorCode)(NSString *return_msg, NSString *err_code, NSString *err_code_des);
 
+/** 微信返回的交易状态信息 */
+typedef void(^BackTrade_stateMsg)(NSString *backTrade_stateMsg, NSString *backTrade_state);
+
 @property (copy, nonatomic) NSString *partnerKey;
 
 @property (copy, nonatomic) BackCode backCode;
@@ -28,6 +31,13 @@ typedef void(^Return_ErrorCode)(NSString *return_msg, NSString *err_code, NSStri
 
 @property (copy, nonatomic) Return_ErrorCode return_ErrorCode;
 
+@property (copy, nonatomic) BackTrade_stateMsg backTrade_stateMsg;
+
+/**
+ *  单例创建支付对象
+ *
+ *  @return <#return value description#>
+ */
 + (DWWXPay *) dw_sharedManager;
 
 /**
@@ -38,7 +48,6 @@ typedef void(^Return_ErrorCode)(NSString *return_msg, NSString *err_code, NSStri
  */
 - (BOOL)dw_RegisterApp:(NSString *)appid withDescription:(NSString *)appdesc;
 
-/**----------------------------------------付款----------------------------------*/
 /*!
  *  @author dwang, 16-07-08 19:07:57
  *
@@ -61,18 +70,38 @@ typedef void(^Return_ErrorCode)(NSString *return_msg, NSString *err_code, NSStri
 
 
 /*!
+ *  @author dwang, 16-07-08 19:07:57
+ *
+ *  @brief 获取最终发送的查询订单XML
+ *
+ *  @param appid        微信开放平台审核通过的应用APPID
+ *  @param mch_id       微信支付分配的商户号
+ *  @param partnerKey   用户Key密钥
+ *  @param out_trade_no 商户订单号
+ *
+ *  @return xmlString
+ *
+ *  @since <#version number#>
+ */
+- (NSString *)dw_queryOrderSetAppid:(NSString *)appid Mch_id:(NSString *)mch_id PartnerKey:(NSString *)partnerKey Out_trade_no:(NSString *)out_trade_no;
+
+
+/*!
  *  @author dwang, 16-07-24 14:07:22
  *
  *  @brief 网络请求
  *
- *  @param url              付款:@"https://api.mch.weixin.qq.com/pay/unifiedorder"
- *  @param xml              最终发送的XML
- *  @param return_ErrorCode 失败的错误信息
- *  @param backResp         微信返回内容的回调
- *  @param backCode         微信返回结果的回调
+ *  @param url                      付款:@"https://api.mch.weixin.qq.com/pay/unifiedorder"
+ *                                  查询订单:@"https://api.mch.weixin.qq.com/pay/orderquery"
+ *  @param xml                      最终发送的XML
+ *  @param return_ErrorCode         失败的错误信息
+ *  @param backResp                 微信返回内容的回调
+ *  @param backCode                 微信返回结果的回调
+ *  @param backTrade_stateMsg       微信返回的交易状态信息
  *
  *  @since <#version number#>
- */- (void)dw_post:(NSString*)url xml:(NSString*)xml return_ErrorCode:(Return_ErrorCode)return_ErrorCode backResp:(BackResp)backResp backCode:(BackCode)backCode;
+ */
+- (void)dw_post:(NSString*)url xml:(NSString*)xml return_ErrorCode:(Return_ErrorCode)return_ErrorCode backResp:(BackResp)backResp backCode:(BackCode)backCode BackTrade_stateMsg:(BackTrade_stateMsg)backTrade_stateMsg;
 
 
 @end

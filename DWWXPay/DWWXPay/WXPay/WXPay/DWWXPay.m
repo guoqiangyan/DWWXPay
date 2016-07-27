@@ -71,8 +71,29 @@ static DWWXPay *sharedManager = nil;
     
 }
 
+- (NSString *)dw_queryOrderSetAppid:(NSString *)appid Mch_id:(NSString *)mch_id PartnerKey:(NSString *)partnerKey Out_trade_no:(NSString *)out_trade_no {
+    
+    self.partnerKey = partnerKey;
+    
+    NSString *nonce_str =  [NSString dw_getNonce_str];
+    
+    NSString *stringA = [NSString stringWithFormat:
+                         @"appid=%@&mch_id=%@&nonce_str=%@&out_trade_no=%@",
+                         appid,
+                         mch_id,
+                         nonce_str,
+                         out_trade_no];
+    
+    NSString *stringSignTemp = [NSString stringWithFormat:@"%@&key=%@",stringA,partnerKey];
+    
+    NSString *sign = [NSString dw_md5String:stringSignTemp];
+    
+    NSString *xmlString = [NSString dw_queryOrderGetXmlAppid:appid Mch_id:mch_id Nonce_str:nonce_str Out_trade_no:out_trade_no Sign:sign];
+    
+    return xmlString;
+}
 
-- (void)dw_post:(NSString*)url xml:(NSString*)xml return_ErrorCode:(Return_ErrorCode)return_ErrorCode backResp:(BackResp)backResp backCode:(BackCode)backCode {
+- (void)dw_post:(NSString*)url xml:(NSString*)xml return_ErrorCode:(Return_ErrorCode)return_ErrorCode backResp:(BackResp)backResp backCode:(BackCode)backCode BackTrade_stateMsg:(BackTrade_stateMsg)backTrade_stateMsg {
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:12];
     
@@ -93,6 +114,41 @@ static DWWXPay *sharedManager = nil;
             DWWXPaySuccessModels *paySuccessModels = [DWWXPaySuccessModels mj_objectWithKeyValues:respParams];
             
             if ([paySuccessModels.return_code isEqualToString:@"SUCCESS"]) {
+                
+                if ([paySuccessModels.result_code isEqualToString:@"SUCCESS"]) {
+                    
+                    if ([url isEqualToString:@"https://api.mch.weixin.qq.com/pay/orderquery"]) {
+                        
+                        if ([paySuccessModels.trade_state isEqualToString:@"SUCCESS"]) {
+                            
+                            [self backTrade_stateMsg:@"支付成功" backTrade_state:paySuccessModels.trade_state];
+                            
+                        }else if ([paySuccessModels.trade_state isEqualToString:@"REFUND"]) {
+                            
+                            [self backTrade_stateMsg:@"转入退款" backTrade_state:paySuccessModels.trade_state];
+                            
+                        }else if ([paySuccessModels.trade_state isEqualToString:@"NOTPAY"]) {
+                            
+                             [self backTrade_stateMsg:@"未支付" backTrade_state:paySuccessModels.trade_state];
+                            
+                        }else if ([paySuccessModels.trade_state isEqualToString:@"CLOSED"]) {
+                            
+                            [self backTrade_stateMsg:@"已关闭" backTrade_state:paySuccessModels.trade_state];
+                            
+                        }else if ([paySuccessModels.trade_state isEqualToString:@"REVOKED"]) {
+                            
+                            [self backTrade_stateMsg:@"用户支付中" backTrade_state:paySuccessModels.trade_state];
+                            
+                        }else if ([paySuccessModels.trade_state isEqualToString:@"PAYERROR"]) {
+                            
+                            [self backTrade_stateMsg:@"支付失败(其他原因，如银行返回失败)" backTrade_state:paySuccessModels.trade_state];
+                            
+                        }
+                        
+                         return ;
+                        
+                    }
+                
                 
                 PayReq *request = [[PayReq alloc] init];
                 
@@ -128,7 +184,8 @@ static DWWXPay *sharedManager = nil;
             }
             
         }
-        
+      
+     }
     }];
     
     [dataTask resume] ; // 开始
@@ -151,6 +208,12 @@ static DWWXPay *sharedManager = nil;
         
     };
     
+    self.backTrade_stateMsg = ^(NSString *trade_stateMsg, NSString *trade_state) {
+        
+        backTrade_stateMsg(trade_stateMsg, trade_state);
+        
+    };
+    
 }
 
 - (void)backCode:(NSString *)backCode {
@@ -158,6 +221,16 @@ static DWWXPay *sharedManager = nil;
     if (self.backCode) {
         
         self.backCode(backCode);
+        
+    }
+    
+}
+
+- (void)backTrade_stateMsg:(NSString *)backTrade_stateMsg backTrade_state:(NSString *)backTrade_state{
+    
+    if (self.backTrade_stateMsg) {
+        
+        self.backTrade_stateMsg(backTrade_stateMsg, backTrade_state);
         
     }
     
