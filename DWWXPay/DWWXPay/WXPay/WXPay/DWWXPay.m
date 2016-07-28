@@ -149,6 +149,7 @@ static DWWXPay *sharedManager = nil;
                         
                     }
                 
+                }
                 
                 PayReq *request = [[PayReq alloc] init];
                 
@@ -185,7 +186,7 @@ static DWWXPay *sharedManager = nil;
             
         }
       
-     }
+    
     }];
     
     [dataTask resume] ; // 开始
