@@ -85,16 +85,18 @@
 //查询订单
 - (void)queryOrderClick {
   
-    NSString *xmlString = [pay dw_queryOrderSetAppid:@"appid" Mch_id:@"商户id" PartnerKey:@"商户密钥" Out_trade_no:@"订单号"];
+    NSString *xmlString = [pay dw_queryOrderSetAppid:@"appid" Mch_id:@"商户id" PartnerKey:@"商户密钥" Out_trade_no:@"订单号必需为存在的订单号，不可以是虚假的订单号"];
     
     [pay dw_post:@"https://api.mch.weixin.qq.com/pay/orderquery" xml:xmlString return_ErrorCode:^(NSString *return_msg, NSString *err_code, NSString *err_code_des) {
         
+        NSLog(@"%@---%@---%@",return_msg,err_code,err_code_des);
         
     } backResp:^(BaseResp *backResp) {
         
         
         
     } backCode:^(NSString *backCode) {
+        
         
         
         

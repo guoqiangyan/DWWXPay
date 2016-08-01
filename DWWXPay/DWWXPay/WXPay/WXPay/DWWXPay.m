@@ -149,6 +149,26 @@ static DWWXPay *sharedManager = nil;
                         
                     }
                 
+                }else {
+                    
+                    if (self.return_ErrorCode) {
+                        
+                        NSString *err_code_des;
+                        
+                        if ([paySuccessModels.err_code isEqualToString:@"ORDERNOTEXIST"]) {
+                            
+                            err_code_des = @"此交易订单号不存在\n该API只能查提交支付交易返回成功的订单，请商户检查需要查询的订单号是否正确";
+                            
+                        }else if ([paySuccessModels.err_code isEqualToString:@"SYSTEMERROR"]) {
+                            
+                            err_code_des = @"系统错误\n系统异常，请再调用发起查询";
+                            
+                        }
+                        
+                        self.return_ErrorCode(paySuccessModels.return_msg,paySuccessModels.err_code,err_code_des);
+                        
+                        return;
+                    }
                 }
                 
                 PayReq *request = [[PayReq alloc] init];
