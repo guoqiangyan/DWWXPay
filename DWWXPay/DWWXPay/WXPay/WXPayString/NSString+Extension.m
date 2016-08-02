@@ -10,7 +10,7 @@
 
 @implementation NSString (Extension)
 
-/** md5 一般加密 */
+#pragma mark ---md5 一般加密
 + (NSString *)dw_md5String:(NSString *)str {
     
     const char *myPasswd = [str UTF8String ];
@@ -34,7 +34,7 @@
 }
 
 
-/** md5 NB( 牛逼的意思 ) 加密 */
+#pragma mark ---md5 NB( 牛逼的意思 ) 加密
 + ( NSString *)dw_md5StringNB:( NSString *)str {
     
     const char *myPasswd = [str UTF8String ];
@@ -61,7 +61,7 @@
 
 
 
-/** 获取随机数 */
+#pragma mark ---获取随机数
 + (NSString *)dw_getNonce_str {
     
     NSArray *sourceStr = @[@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",
@@ -83,7 +83,7 @@
 }
 
 
-/** 获取IP地址 */
+#pragma mark ---获取IP地址
 + (NSString *)dw_getIPAddress:(BOOL)preferIPv4 {
     
     NSArray *searchArray = preferIPv4 ?
@@ -94,22 +94,18 @@
     
     NSMutableDictionary *addresses = [NSMutableDictionary dictionaryWithCapacity:8];
     
-    // retrieve the current interfaces - returns 0 on success
-    
     struct ifaddrs *interfaces;
     
     if(!getifaddrs(&interfaces)) {
         
-        // Loop through linked list of interfaces
-        
-        struct ifaddrs *interface;
+    struct ifaddrs *interface;
         
         for(interface=interfaces; interface; interface=interface->ifa_next) {
             
             if(!(interface->ifa_flags & IFF_UP) /* || (interface->ifa_flags & IFF_LOOPBACK) */ ) {
                 
-                continue; // deeply nested code harder to read
-                
+                continue;
+            
             }
             
             const struct sockaddr_in *addr = (const struct sockaddr_in*)interface->ifa_addr;
@@ -154,18 +150,11 @@
             
         }
         
-        // Free memory
-        
         freeifaddrs(interfaces);
         
     }
     
-    
     NSDictionary *addressess = [addresses count] ? addresses : nil;
-    
-    
-    
-    //    NSLog(@"addresses: %@", addresses);
     
     __block NSString *address;
     
@@ -183,8 +172,17 @@
     
 }
 
-
-+ (NSString *)dw_payMoenyGetXmlAppid:(NSString *)appid Mch_id:(NSString *)mch_id Nonce_str:(NSString *)nonce_str Sign:(NSString *)sign Body:(NSString *)body Out_trade_no:(NSString *)out_trade_no Total_fee:(int)total_fee Spbill_create_ip:(NSString *)spbill_create_ip Notify_url:(NSString *)notify_url Trade_type:(NSString *)trade_type {
+#pragma mark ---支付xmlString
++ (NSString *)dw_payMoenyGetXmlAppid:(NSString *)appid
+                               Mch_id:(NSString *)mch_id
+                                Nonce_str:(NSString *)nonce_str
+                                Sign:(NSString *)sign
+                                Body:(NSString *)body
+                                Out_trade_no:(NSString *)out_trade_no
+                                Total_fee:(int)total_fee
+                                Spbill_create_ip:(NSString *)spbill_create_ip
+                                Notify_url:(NSString *)notify_url
+                                Trade_type:(NSString *)trade_type {
     
     NSString *xmlString = [NSString stringWithFormat:@"<xml><appid>%@</appid><body>%@</body><mch_id>%@</mch_id><nonce_str>%@</nonce_str><notify_url>%@</notify_url><out_trade_no>%@</out_trade_no><spbill_create_ip>%@</spbill_create_ip><total_fee>%d</total_fee><trade_type>%@</trade_type><sign>%@</sign></xml>",
                            appid,
@@ -202,7 +200,12 @@
     
 }
 
-+ (NSString *)dw_queryOrderGetXmlAppid:(NSString *)appid Mch_id:(NSString *)mch_id Nonce_str:(NSString *)nonce_str Out_trade_no:(NSString *)out_trade_no Sign:(NSString *)sign {
+#pragma mark ---查询订单xmlString
++ (NSString *)dw_queryOrderGetXmlAppid:(NSString *)appid
+                                 Mch_id:(NSString *)mch_id
+                                 Nonce_str:(NSString *)nonce_str
+                                 Out_trade_no:(NSString *)out_trade_no
+                                 Sign:(NSString *)sign {
     
     NSString *xmlString = [NSString stringWithFormat:@"<xml><appid>%@</appid><mch_id>%@</mch_id><nonce_str>%@</nonce_str><out_trade_no>%@</out_trade_no><sign>%@</sign></xml>",
                            appid,

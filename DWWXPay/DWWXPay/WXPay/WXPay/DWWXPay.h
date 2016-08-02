@@ -23,6 +23,9 @@ typedef void(^Return_ErrorCode)(NSString *return_msg, NSString *err_code, NSStri
 /** 微信返回的交易订单状态信息 */
 typedef void(^BackTrade_stateMsg)(NSString *backTrade_stateMsg, NSString *backTrade_state);
 
+/**
+ *  商户密钥
+ */
 @property (copy, nonatomic) NSString *partnerKey;
 
 @property (copy, nonatomic) BackCode backCode;
@@ -49,7 +52,7 @@ typedef void(^BackTrade_stateMsg)(NSString *backTrade_stateMsg, NSString *backTr
 - (BOOL)dw_RegisterApp:(NSString *)appid withDescription:(NSString *)appdesc;
 
 /*!
- *  @author dwang, 16-07-08 19:07:57
+ *  @author dwang
  *
  *  @brief 获取最终发送的付款XML
  *
@@ -70,7 +73,7 @@ typedef void(^BackTrade_stateMsg)(NSString *backTrade_stateMsg, NSString *backTr
 
 
 /*!
- *  @author dwang, 16-07-08 19:07:57
+ *  @author dwang
  *
  *  @brief 获取最终发送的查询订单XML
  *
@@ -87,9 +90,9 @@ typedef void(^BackTrade_stateMsg)(NSString *backTrade_stateMsg, NSString *backTr
 
 
 /*!
- *  @author dwang, 16-07-24 14:07:22
+ *  @author dwang
  *
- *  @brief 网络请求
+ *  @brief 发送支付/查询订单网络请求
  *
  *  @param url                      付款:@"https://api.mch.weixin.qq.com/pay/unifiedorder"
  *                                  查询订单:@"https://api.mch.weixin.qq.com/pay/orderquery"

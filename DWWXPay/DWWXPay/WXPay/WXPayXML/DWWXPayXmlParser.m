@@ -33,7 +33,11 @@
     [valBuffer setString:string];
 }
 
-- (void)parser:(NSXMLParser*)parser didEndElement:(NSString*)elementName namespaceURI:(NSString*)namespaceURI qualifiedName:(NSString*)qName{
+- (void)parser:(NSXMLParser*)parser
+        didEndElement:(NSString*)elementName
+        namespaceURI:(NSString*)namespaceURI
+        qualifiedName:(NSString*)qName{
+    
     if([valBuffer isEqualToString:@"\n"]==NO &&
        [elementName isEqualToString:@"root"]==NO)
     {

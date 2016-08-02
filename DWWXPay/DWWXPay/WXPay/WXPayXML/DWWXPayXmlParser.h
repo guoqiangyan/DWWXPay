@@ -16,6 +16,7 @@
     NSError* lastError;
 }
 
+/** xml解析 */
 + (NSDictionary*)dw_parseData:(NSData*)data;
 
 @end

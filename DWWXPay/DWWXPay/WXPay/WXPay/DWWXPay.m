@@ -32,6 +32,7 @@ static DWWXPay *sharedManager = nil;
     return sharedManager;
 }
 
+#pragma mark ---向微信终端程序注册第三方应用
 - (BOOL)dw_RegisterApp:(NSString *)appid withDescription:(NSString *)appdesc {
     
     BOOL isbool = [WXApi registerApp:appid withDescription:appdesc];
@@ -39,15 +40,21 @@ static DWWXPay *sharedManager = nil;
     return isbool;
 }
 
-- (NSString *)dw_payMoenySetAppid:(NSString *)appid Mch_id:(NSString *)mch_id PartnerKey:(NSString *)partnerKey Body:(NSString *)body Out_trade_no:(NSString *)out_trade_no total_fee:(int)total_fee Notify_url:(NSString *)notify_url Trade_type:(NSString *)trade_type {
+#pragma mark ---获取支付最终发送的xml字符串
+- (NSString *)dw_payMoenySetAppid:(NSString *)appid
+                            Mch_id:(NSString *)mch_id
+                            PartnerKey:(NSString *)partnerKey
+                            Body:(NSString *)body
+                            Out_trade_no:(NSString *)out_trade_no
+                            total_fee:(int)total_fee
+                            Notify_url:(NSString *)notify_url
+                            Trade_type:(NSString *)trade_type {
     
     self.partnerKey = partnerKey;
     
     NSString *nonce_str =  [NSString dw_getNonce_str];
     
     NSString *spbill_create_ip = [NSString dw_getIPAddress:YES];
-    
-    
     
     NSString *stringA = [NSString stringWithFormat:
                          @"appid=%@&body=%@&mch_id=%@&nonce_str=%@&notify_url=%@&out_trade_no=%@&spbill_create_ip=%@&total_fee=%d&trade_type=%@",
@@ -65,13 +72,26 @@ static DWWXPay *sharedManager = nil;
     
     NSString *sign = [NSString dw_md5String:stringSignTemp];
     
-    NSString *xmlString = [NSString dw_payMoenyGetXmlAppid:appid Mch_id:mch_id Nonce_str:nonce_str Sign:sign Body:body Out_trade_no:out_trade_no Total_fee:total_fee Spbill_create_ip:spbill_create_ip Notify_url:notify_url Trade_type:trade_type];
+    NSString *xmlString = [NSString dw_payMoenyGetXmlAppid:appid
+                                                    Mch_id:mch_id
+                                                    Nonce_str:nonce_str
+                                                    Sign:sign
+                                                    Body:body
+                                                    Out_trade_no:out_trade_no
+                                                    Total_fee:total_fee
+                                                    Spbill_create_ip:spbill_create_ip
+                                                    Notify_url:notify_url
+                                                    Trade_type:trade_type];
     
     return xmlString;
     
 }
 
-- (NSString *)dw_queryOrderSetAppid:(NSString *)appid Mch_id:(NSString *)mch_id PartnerKey:(NSString *)partnerKey Out_trade_no:(NSString *)out_trade_no {
+#pragma mark ---获取查询订单最终发送的xml字符串
+- (NSString *)dw_queryOrderSetAppid:(NSString *)appid
+                              Mch_id:(NSString *)mch_id
+                              PartnerKey:(NSString *)partnerKey
+                              Out_trade_no:(NSString *)out_trade_no {
     
     self.partnerKey = partnerKey;
     
@@ -88,14 +108,26 @@ static DWWXPay *sharedManager = nil;
     
     NSString *sign = [NSString dw_md5String:stringSignTemp];
     
-    NSString *xmlString = [NSString dw_queryOrderGetXmlAppid:appid Mch_id:mch_id Nonce_str:nonce_str Out_trade_no:out_trade_no Sign:sign];
+    NSString *xmlString = [NSString dw_queryOrderGetXmlAppid:appid
+                                                       Mch_id:mch_id
+                                                       Nonce_str:nonce_str
+                                                       Out_trade_no:out_trade_no
+                                                       Sign:sign];
     
     return xmlString;
 }
 
-- (void)dw_post:(NSString*)url xml:(NSString*)xml return_ErrorCode:(Return_ErrorCode)return_ErrorCode backResp:(BackResp)backResp backCode:(BackCode)backCode BackTrade_stateMsg:(BackTrade_stateMsg)backTrade_stateMsg {
+#pragma mark ---发送微信支付/查询订单请求
+- (void)dw_post:(NSString*)url
+            xml:(NSString*)xml
+            return_ErrorCode:(Return_ErrorCode)return_ErrorCode
+            backResp:(BackResp)backResp backCode:(BackCode)backCode
+            BackTrade_stateMsg:(BackTrade_stateMsg)backTrade_stateMsg {
     
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:12];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]
+                                    initWithURL: [NSURL URLWithString:url]
+                                    cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                    timeoutInterval:12];
     
     [request setHTTPMethod:@"POST"];
     
@@ -105,7 +137,9 @@ static DWWXPay *sharedManager = nil;
     
     [request setHTTPBody:[xml dataUsingEncoding:NSUTF8StringEncoding]];
     
-    NSURLSessionDataTask * dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    NSURLSessionDataTask * dataTask = [[NSURLSession sharedSession]
+                                       dataTaskWithRequest:request
+                                       completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         if(data.length) {
             
@@ -142,11 +176,9 @@ static DWWXPay *sharedManager = nil;
                         }else if ([paySuccessModels.trade_state isEqualToString:@"PAYERROR"]) {
                             
                             [self backTrade_stateMsg:@"支付失败(其他原因，如银行返回失败)" backTrade_state:paySuccessModels.trade_state];
-                            
                         }
                         
                          return ;
-                        
                     }
                 
                 }else {
@@ -162,7 +194,6 @@ static DWWXPay *sharedManager = nil;
                         }else if ([paySuccessModels.err_code isEqualToString:@"SYSTEMERROR"]) {
                             
                             err_code_des = @"系统错误\n系统异常，请再调用发起查询";
-                            
                         }
                         
                         self.return_ErrorCode(paySuccessModels.return_msg,paySuccessModels.err_code,err_code_des);
@@ -179,56 +210,64 @@ static DWWXPay *sharedManager = nil;
                 
                 request.package = @"Sign=WXPay";
                 
-                request.nonceStr= paySuccessModels.nonce_str;
+                request.nonceStr= [NSString dw_getNonce_str];
                 
                 //获取时间戳
                 time_t now;
                 time(&now);
                 request.timeStamp = (UInt32)[[NSString stringWithFormat:@"%ld", now] integerValue];
                 
-                NSString *stringA = [NSString stringWithFormat:@"appid=%@&noncestr=%@&package=%@&partnerid=%@&prepayid=%@&timestamp=%d",paySuccessModels.appid,request.nonceStr,request.package,request.partnerId,request.prepayId,request.timeStamp];
+                NSString *stringA = [NSString stringWithFormat:@"appid=%@&noncestr=%@&package=%@&partnerid=%@&prepayid=%@&timestamp=%d",
+                                     paySuccessModels.appid,
+                                     request.nonceStr,
+                                     request.package,
+                                     request.partnerId,
+                                     request.prepayId,
+                                     request.timeStamp];
                 
                 NSString *stringSignTemp = [NSString stringWithFormat:@"%@&key=%@",stringA,self.partnerKey];
                 
                 request.sign = [[NSString dw_md5String:stringSignTemp] uppercaseString];
                 
+                //发起支付请求
                 [WXApi sendReq:request];
                 
             }else if(![paySuccessModels.return_code isEqualToString:@"SUCCESS"]){
                 
                 if (self.return_ErrorCode) {
                     
-                    self.return_ErrorCode(paySuccessModels.return_msg,paySuccessModels.err_code,paySuccessModels.err_code_des);
-                    
+                    self.return_ErrorCode(paySuccessModels.return_msg,
+                                          paySuccessModels.err_code,
+                                          paySuccessModels.err_code_des);
                 }
-                
             }
-            
         }
-      
-    
     }];
     
     [dataTask resume] ; // 开始
     
+#pragma mark ---微信返回的错误信息
     self.return_ErrorCode = ^(NSString *msg, NSString *code, NSString *codeMsg) {
         
         return_ErrorCode(msg,code,codeMsg);
         
     };
     
+#pragma mark ---微信返回内容
     self.backResp = ^(BaseResp *resp) {
         
         backResp(resp);
         
     };
     
+#pragma mark ---微信返回结果
     self.backCode = ^(NSString *code){
         
         backCode(code);
         
     };
     
+#pragma mark ---微信返回的交易订单状态信息
     self.backTrade_stateMsg = ^(NSString *trade_stateMsg, NSString *trade_state) {
         
         backTrade_stateMsg(trade_stateMsg, trade_state);
@@ -237,6 +276,7 @@ static DWWXPay *sharedManager = nil;
     
 }
 
+#pragma mark ---微信返回结果
 - (void)backCode:(NSString *)backCode {
     
     if (self.backCode) {
@@ -247,6 +287,7 @@ static DWWXPay *sharedManager = nil;
     
 }
 
+#pragma mark ---微信返回的交易订单状态信息
 - (void)backTrade_stateMsg:(NSString *)backTrade_stateMsg backTrade_state:(NSString *)backTrade_state{
     
     if (self.backTrade_stateMsg) {
@@ -257,6 +298,7 @@ static DWWXPay *sharedManager = nil;
     
 }
 
+#pragma mark ---微信支付完成后回调
 -(void)onResp:(BaseResp *)resp {
     
     if (self.backResp) {
