@@ -17,8 +17,6 @@
 		4AA75D621D2F81F300D7E30A /* DWWXPay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75D601D2F81F300D7E30A /* DWWXPay.xcdatamodeld */; };
 		4AA75D641D2F81F300D7E30A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AA75D631D2F81F300D7E30A /* Assets.xcassets */; };
 		4AA75D671D2F81F300D7E30A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AA75D651D2F81F300D7E30A /* LaunchScreen.storyboard */; };
-		4AA75D721D2F81F300D7E30A /* DWWXPayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75D711D2F81F300D7E30A /* DWWXPayTests.m */; };
-		4AA75D7D1D2F81F300D7E30A /* DWWXPayUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75D7C1D2F81F300D7E30A /* DWWXPayUITests.m */; };
 		4AA75D911D2F828B00D7E30A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA75D901D2F828B00D7E30A /* Security.framework */; };
 		4AA75D931D2F829600D7E30A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA75D921D2F829600D7E30A /* CoreTelephony.framework */; };
 		4AA75D951D2F829C00D7E30A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA75D941D2F829C00D7E30A /* SystemConfiguration.framework */; };
@@ -42,23 +40,6 @@
 		4AA75DD31D2F918200D7E30A /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DC91D2F918200D7E30A /* NSString+MJExtension.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		4AA75D6E1D2F81F300D7E30A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4AA75D491D2F81F200D7E30A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4AA75D501D2F81F200D7E30A;
-			remoteInfo = DWWXPay;
-		};
-		4AA75D791D2F81F300D7E30A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4AA75D491D2F81F200D7E30A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4AA75D501D2F81F200D7E30A;
-			remoteInfo = DWWXPay;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		3530C2771D2FD78A009E6D0E /* DWWXPay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWWXPay.h; sourceTree = "<group>"; };
 		3530C2781D2FD78A009E6D0E /* DWWXPay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWWXPay.m; sourceTree = "<group>"; };
@@ -77,12 +58,6 @@
 		4AA75D631D2F81F300D7E30A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AA75D661D2F81F300D7E30A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4AA75D681D2F81F300D7E30A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4AA75D6D1D2F81F300D7E30A /* DWWXPayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DWWXPayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4AA75D711D2F81F300D7E30A /* DWWXPayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWWXPayTests.m; sourceTree = "<group>"; };
-		4AA75D731D2F81F300D7E30A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4AA75D781D2F81F300D7E30A /* DWWXPayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DWWXPayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4AA75D7C1D2F81F300D7E30A /* DWWXPayUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWWXPayUITests.m; sourceTree = "<group>"; };
-		4AA75D7E1D2F81F300D7E30A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AA75D901D2F828B00D7E30A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		4AA75D921D2F829600D7E30A /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		4AA75D941D2F829C00D7E30A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -139,20 +114,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4AA75D6A1D2F81F300D7E30A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4AA75D751D2F81F300D7E30A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -180,8 +141,6 @@
 			children = (
 				4AA75D9E1D2F82FA00D7E30A /* Framework */,
 				4AA75D531D2F81F200D7E30A /* DWWXPay */,
-				4AA75D701D2F81F300D7E30A /* DWWXPayTests */,
-				4AA75D7B1D2F81F300D7E30A /* DWWXPayUITests */,
 				4AA75D521D2F81F200D7E30A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -190,8 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				4AA75D511D2F81F200D7E30A /* DWWXPay.app */,
-				4AA75D6D1D2F81F300D7E30A /* DWWXPayTests.xctest */,
-				4AA75D781D2F81F300D7E30A /* DWWXPayUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -220,24 +177,6 @@
 				4AA75D551D2F81F200D7E30A /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		4AA75D701D2F81F300D7E30A /* DWWXPayTests */ = {
-			isa = PBXGroup;
-			children = (
-				4AA75D711D2F81F300D7E30A /* DWWXPayTests.m */,
-				4AA75D731D2F81F300D7E30A /* Info.plist */,
-			);
-			path = DWWXPayTests;
-			sourceTree = "<group>";
-		};
-		4AA75D7B1D2F81F300D7E30A /* DWWXPayUITests */ = {
-			isa = PBXGroup;
-			children = (
-				4AA75D7C1D2F81F300D7E30A /* DWWXPayUITests.m */,
-				4AA75D7E1D2F81F300D7E30A /* Info.plist */,
-			);
-			path = DWWXPayUITests;
 			sourceTree = "<group>";
 		};
 		4AA75D8A1D2F821700D7E30A /* WXPay */ = {
@@ -345,42 +284,6 @@
 			productReference = 4AA75D511D2F81F200D7E30A /* DWWXPay.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4AA75D6C1D2F81F300D7E30A /* DWWXPayTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4AA75D841D2F81F300D7E30A /* Build configuration list for PBXNativeTarget "DWWXPayTests" */;
-			buildPhases = (
-				4AA75D691D2F81F300D7E30A /* Sources */,
-				4AA75D6A1D2F81F300D7E30A /* Frameworks */,
-				4AA75D6B1D2F81F300D7E30A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4AA75D6F1D2F81F300D7E30A /* PBXTargetDependency */,
-			);
-			name = DWWXPayTests;
-			productName = DWWXPayTests;
-			productReference = 4AA75D6D1D2F81F300D7E30A /* DWWXPayTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		4AA75D771D2F81F300D7E30A /* DWWXPayUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4AA75D871D2F81F300D7E30A /* Build configuration list for PBXNativeTarget "DWWXPayUITests" */;
-			buildPhases = (
-				4AA75D741D2F81F300D7E30A /* Sources */,
-				4AA75D751D2F81F300D7E30A /* Frameworks */,
-				4AA75D761D2F81F300D7E30A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4AA75D7A1D2F81F300D7E30A /* PBXTargetDependency */,
-			);
-			name = DWWXPayUITests;
-			productName = DWWXPayUITests;
-			productReference = 4AA75D781D2F81F300D7E30A /* DWWXPayUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -392,14 +295,6 @@
 				TargetAttributes = {
 					4AA75D501D2F81F200D7E30A = {
 						CreatedOnToolsVersion = 7.3.1;
-					};
-					4AA75D6C1D2F81F300D7E30A = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = 4AA75D501D2F81F200D7E30A;
-					};
-					4AA75D771D2F81F300D7E30A = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = 4AA75D501D2F81F200D7E30A;
 					};
 				};
 			};
@@ -417,8 +312,6 @@
 			projectRoot = "";
 			targets = (
 				4AA75D501D2F81F200D7E30A /* DWWXPay */,
-				4AA75D6C1D2F81F300D7E30A /* DWWXPayTests */,
-				4AA75D771D2F81F300D7E30A /* DWWXPayUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -431,20 +324,6 @@
 				4AA75D671D2F81F300D7E30A /* LaunchScreen.storyboard in Resources */,
 				4AA75D641D2F81F300D7E30A /* Assets.xcassets in Resources */,
 				4AA75D5F1D2F81F300D7E30A /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4AA75D6B1D2F81F300D7E30A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4AA75D761D2F81F300D7E30A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,36 +355,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4AA75D691D2F81F300D7E30A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4AA75D721D2F81F300D7E30A /* DWWXPayTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4AA75D741D2F81F300D7E30A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4AA75D7D1D2F81F300D7E30A /* DWWXPayUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4AA75D6F1D2F81F300D7E30A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4AA75D501D2F81F200D7E30A /* DWWXPay */;
-			targetProxy = 4AA75D6E1D2F81F300D7E30A /* PBXContainerItemProxy */;
-		};
-		4AA75D7A1D2F81F300D7E30A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4AA75D501D2F81F200D7E30A /* DWWXPay */;
-			targetProxy = 4AA75D791D2F81F300D7E30A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4AA75D5D1D2F81F300D7E30A /* Main.storyboard */ = {
@@ -645,52 +495,6 @@
 			};
 			name = Release;
 		};
-		4AA75D851D2F81F300D7E30A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = DWWXPayTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.dwang.DWWXPayTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DWWXPay.app/DWWXPay";
-			};
-			name = Debug;
-		};
-		4AA75D861D2F81F300D7E30A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = DWWXPayTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.dwang.DWWXPayTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DWWXPay.app/DWWXPay";
-			};
-			name = Release;
-		};
-		4AA75D881D2F81F300D7E30A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = DWWXPayUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.dwang.DWWXPayUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = DWWXPay;
-			};
-			name = Debug;
-		};
-		4AA75D891D2F81F300D7E30A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = DWWXPayUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.dwang.DWWXPayUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = DWWXPay;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -708,24 +512,6 @@
 			buildConfigurations = (
 				4AA75D821D2F81F300D7E30A /* Debug */,
 				4AA75D831D2F81F300D7E30A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4AA75D841D2F81F300D7E30A /* Build configuration list for PBXNativeTarget "DWWXPayTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4AA75D851D2F81F300D7E30A /* Debug */,
-				4AA75D861D2F81F300D7E30A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4AA75D871D2F81F300D7E30A /* Build configuration list for PBXNativeTarget "DWWXPayUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4AA75D881D2F81F300D7E30A /* Debug */,
-				4AA75D891D2F81F300D7E30A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
