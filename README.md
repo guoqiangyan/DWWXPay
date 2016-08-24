@@ -67,6 +67,7 @@
 ---    
 
 #*在开始支付时调用以下代码*
+	//Trade_type:@"APP"
      NSString *xmlString = [pay dw_payMoenySetAppid:@"appid" Mch_id:@"商户id" PartnerKey:@"密钥" Body:@"商品信息" Out_trade_no:@"订单号必需为新的订单号，不可以是以存在的订单号" total_fee:1 Notify_url:@"回调地址" Trade_type:@"类型"];
     
 ----
