@@ -1,6 +1,8 @@
 # DWWXPay
 #简单两步实现微信支付与查询订单
 #如果感觉不错请点击右上角Star
+#使用中如果遇到问题,可以加群:577506623
+#向大家推荐一个全新的开发者交流、代码分享平台:[CodeData](http://www.codedata.cn)
 ---
 
 1、iOS 9系统策略更新，限制了http协议的访问，此外应用需要在“Info.plist”中将要使用的URL Schemes列为白名单，才可正常检查其他应用是否安装。
@@ -65,6 +67,7 @@
 ---    
 
 #*在开始支付时调用以下代码*
+	//Trade_type:@"APP"
      NSString *xmlString = [pay dw_payMoenySetAppid:@"appid" Mch_id:@"商户id" PartnerKey:@"密钥" Body:@"商品信息" Out_trade_no:@"订单号必需为新的订单号，不可以是以存在的订单号" total_fee:1 Notify_url:@"回调地址" Trade_type:@"类型"];
     
 ----
