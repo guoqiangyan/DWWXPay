@@ -68,7 +68,7 @@
 
 #*在开始支付时调用以下代码*
 	//Trade_type:@"APP"
-	//Out_trade_no:商户系统内部的订单号,32个字符内、可包含字母, 其他说明见:[商户订单号](https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=4_2)
+	//Out_trade_no:商户系统内部的订单号,32个字符内、可包含字母
      NSString *xmlString = [pay dw_payMoenySetAppid:@"appid" Mch_id:@"商户id" PartnerKey:@"密钥" Body:@"商品信息" Out_trade_no:@"订单号必需为新的订单号，不可以是以存在的订单号" total_fee:1 Notify_url:@"回调地址" Trade_type:@"类型"];
     
 ----
