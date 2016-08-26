@@ -74,6 +74,7 @@
     NSString *fee = @"价格单位为分，需要*100，但是必须在此处定义变量进行赋值：如 int i = 10 * 100,那么下面只需要传入i即可";
     
     //Trade_type:@"APP"
+    //Out_trade_no:商户系统内部的订单号,32个字符内、可包含字母
     NSString *xmlString = [self.pay dw_payMoenySetAppid:@"appid" Mch_id:@"商户id" PartnerKey:@"商户密钥" Body:@"微信支付测试" Out_trade_no:@"订单号必需为新的订单号，不可以是以存在的订单号" total_fee:[fee intValue] Notify_url:@"回调地址" Trade_type:@"支付类型"];
     
     [self.pay dw_post:@"https://api.mch.weixin.qq.com/pay/unifiedorder" xml:xmlString return_ErrorCode:^(NSString *return_msg, NSString *err_code, NSString *err_code_des) {
