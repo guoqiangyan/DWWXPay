@@ -13,6 +13,7 @@
 #import "NSString+Extension.h"
 #import "DWWXPayXmlParser.h"
 
+
 @implementation DWWXPay
 
 static DWWXPay *sharedManager = nil;
@@ -54,7 +55,7 @@ static DWWXPay *sharedManager = nil;
     
     NSString *nonce_str =  [NSString dw_getNonce_str];
     
-    NSString *spbill_create_ip = [NSString dw_getIPAddress:YES];
+    NSString *spbill_create_ip = [NSString dw_getIPAddress];
     
     NSString *stringA = [NSString stringWithFormat:
                          @"appid=%@&body=%@&mch_id=%@&nonce_str=%@&notify_url=%@&out_trade_no=%@&spbill_create_ip=%@&total_fee=%d&trade_type=%@",
@@ -67,6 +68,7 @@ static DWWXPay *sharedManager = nil;
                          spbill_create_ip,
                          total_fee,
                          trade_type];
+    
     
     NSString *stringSignTemp = [NSString stringWithFormat:@"%@&key=%@",stringA,partnerKey];
     
@@ -244,7 +246,7 @@ static DWWXPay *sharedManager = nil;
         }
     }];
     
-    [dataTask resume] ; // 开始
+    [dataTask resume]; // 开始
     
 #pragma mark ---微信返回的错误信息
     self.return_ErrorCode = ^(NSString *msg, NSString *code, NSString *codeMsg) {

@@ -7,6 +7,7 @@
 //
 
 #import "NSString+Extension.h"
+#import "DWGetIP.h"
 
 @implementation NSString (Extension)
 
@@ -59,7 +60,30 @@
     
 }
 
-
+#pragma mark ---获取IP地址
++ (NSString *)dw_getIPAddress
+{
+    InitAddresses();
+    GetIPAddresses();
+    GetHWAddresses();
+    
+    int i;
+    //    NSString *deviceIP = nil;
+    for (i=0; i<MAXADDRS; ++i)
+    {
+        static unsigned long localHost = 0x7F000001;            // 127.0.0.1
+        unsigned long theAddr;
+        
+        theAddr = ip_addrs[i];
+        
+        if (theAddr == 0) break;
+        if (theAddr == localHost) continue;
+        
+        return [NSString stringWithFormat:@"%s",ip_names[i]];
+    }
+    
+    return @"192.168.0.1";
+}
 
 #pragma mark ---获取随机数
 + (NSString *)dw_getNonce_str {
@@ -82,95 +106,6 @@
     
 }
 
-
-#pragma mark ---获取IP地址
-+ (NSString *)dw_getIPAddress:(BOOL)preferIPv4 {
-    
-    NSArray *searchArray = preferIPv4 ?
-    
-    @[ IOS_VPN @"/" IP_ADDR_IPv4, IOS_VPN @"/" IP_ADDR_IPv6, IOS_WIFI @"/" IP_ADDR_IPv4, IOS_WIFI @"/" IP_ADDR_IPv6, IOS_CELLULAR @"/" IP_ADDR_IPv4, IOS_CELLULAR @"/" IP_ADDR_IPv6 ] :
-    
-    @[ IOS_VPN @"/" IP_ADDR_IPv6, IOS_VPN @"/" IP_ADDR_IPv4, IOS_WIFI @"/" IP_ADDR_IPv6, IOS_WIFI @"/" IP_ADDR_IPv4, IOS_CELLULAR @"/" IP_ADDR_IPv6, IOS_CELLULAR @"/" IP_ADDR_IPv4 ] ;
-    
-    NSMutableDictionary *addresses = [NSMutableDictionary dictionaryWithCapacity:8];
-    
-    struct ifaddrs *interfaces;
-    
-    if(!getifaddrs(&interfaces)) {
-        
-    struct ifaddrs *interface;
-        
-        for(interface=interfaces; interface; interface=interface->ifa_next) {
-            
-            if(!(interface->ifa_flags & IFF_UP) /* || (interface->ifa_flags & IFF_LOOPBACK) */ ) {
-                
-                continue;
-            
-            }
-            
-            const struct sockaddr_in *addr = (const struct sockaddr_in*)interface->ifa_addr;
-            
-            char addrBuf[ MAX(INET_ADDRSTRLEN, INET6_ADDRSTRLEN) ];
-            
-            if(addr && (addr->sin_family==AF_INET || addr->sin_family==AF_INET6)) {
-                
-                NSString *name = [NSString stringWithUTF8String:interface->ifa_name];
-                
-                NSString *type;
-                
-                if(addr->sin_family == AF_INET) {
-                    
-                    if(inet_ntop(AF_INET, &addr->sin_addr, addrBuf, INET_ADDRSTRLEN)) {
-                        
-                        type = IP_ADDR_IPv4;
-                        
-                    }
-                    
-                } else {
-                    
-                    const struct sockaddr_in6 *addr6 = (const struct sockaddr_in6*)interface->ifa_addr;
-                    
-                    if(inet_ntop(AF_INET6, &addr6->sin6_addr, addrBuf, INET6_ADDRSTRLEN)) {
-                        
-                        type = IP_ADDR_IPv6;
-                        
-                    }
-                    
-                }
-                
-                if(type) {
-                    
-                    NSString *key = [NSString stringWithFormat:@"%@/%@", name, type];
-                    
-                    addresses[key] = [NSString stringWithUTF8String:addrBuf];
-                    
-                }
-                
-            }
-            
-        }
-        
-        freeifaddrs(interfaces);
-        
-    }
-    
-    NSDictionary *addressess = [addresses count] ? addresses : nil;
-    
-    __block NSString *address;
-    
-    [searchArray enumerateObjectsUsingBlock:^(NSString *key, NSUInteger idx, BOOL *stop)
-     
-     {
-         
-         address = addressess[key];
-         
-         if(address) *stop = YES;
-         
-     } ];
-    
-    return address ? address : @"0.0.0.0";
-    
-}
 
 #pragma mark ---支付xmlString
 + (NSString *)dw_payMoenyGetXmlAppid:(NSString *)appid
