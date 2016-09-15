@@ -19,7 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     //向微信终端程序注册第三方应用
-    [[DWWXPay dw_sharedManager] dw_RegisterApp:@"wx14ca19e6f0c43049" withDescription:@"cn.dwang.DWWXPay"];
+    [[DWWXPay dw_sharedManager] dw_RegisterApp:@"appid" withDescription:@"Bundle Identifier"];
     
     return YES;
 }
