@@ -1,7 +1,7 @@
 # 此项目使用Xcode8.1创建，低版本Xcode打开可能会无法使用
 # DWWXPay
 #*已完美支持iOS10,如果您是之前就使用了这个文件，直接替换原文件即可，其它的都不需要改动*
-#简单两步实现微信支付与查询订单
+#简单两步实现![微信支付与查询订单](https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_1)
 #如果感觉不错请点击右上角Star
 #使用中如果遇到问题,可以加群:577506623
 #向大家推荐一个全新的开发者交流、代码分享平台:[CodeData](http://www.codedata.cn)
