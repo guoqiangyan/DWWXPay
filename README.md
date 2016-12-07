@@ -112,4 +112,18 @@
         
         NSLog(@"返回订单状态%@------返回订单状态码%@",backTrade_stateMsg,backTrade_state);
         
-    }];
+    }];
+    
+---
+# 新增
+	/** 检查是否安装微信 */
+	+ (BOOL)dw_isWXAppInstalled;
+
+	/** 判断当前微信的版本是否支持OpenApi */
+	+ (BOOL)dw_isWXAppSupportApi;
+
+	/** 获取微信的itunes安装地址 */
+	+ (NSString *)dw_getWXAppInstallUrl;
+
+	/** 获取当前微信SDK的版本号 */
+	+ (NSString *)dw_getApiVersion;
