@@ -33,6 +33,26 @@ static DWWXPay *sharedManager = nil;
     return sharedManager;
 }
 
+#pragma mark ---检测是否安装微信
++ (BOOL)dw_isWXAppInstalled {
+   return [WXApi isWXAppInstalled];
+}
+
+#pragma mark ---判断当前微信的版本是否支持OpenApi
++ (BOOL) dw_isWXAppSupportApi {
+    return [WXApi isWXAppSupportApi];
+}
+
+#pragma mark ---获取微信的itunes安装地址
++ (NSString *)dw_getWXAppInstallUrl {
+    return [WXApi getWXAppInstallUrl];
+}
+
+#pragma mark ---获取当前微信SDK的版本号
++ (NSString *)dw_getApiVersion {
+    return [WXApi getApiVersion];
+}
+
 #pragma mark ---向微信终端程序注册第三方应用
 - (BOOL)dw_RegisterApp:(NSString *)appid withDescription:(NSString *)appdesc {
     

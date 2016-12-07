@@ -36,12 +36,24 @@ typedef void(^BackTrade_stateMsg)(NSString *backTrade_stateMsg, NSString *backTr
 
 @property (copy, nonatomic) BackTrade_stateMsg backTrade_stateMsg;
 
+/** 检查是否安装微信 */
++ (BOOL)dw_isWXAppInstalled;
+
+/** 判断当前微信的版本是否支持OpenApi */
++ (BOOL)dw_isWXAppSupportApi;
+
+/** 获取微信的itunes安装地址 */
++ (NSString *)dw_getWXAppInstallUrl;
+
+/** 获取当前微信SDK的版本号 */
++ (NSString *)dw_getApiVersion;
+
 /**
  *  单例创建支付对象
  *
  *  @return <#return value description#>
  */
-+ (DWWXPay *) dw_sharedManager;
++ (DWWXPay *)dw_sharedManager;
 
 /**
  *  向微信终端程序注册第三方应用。
