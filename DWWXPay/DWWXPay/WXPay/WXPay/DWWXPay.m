@@ -39,7 +39,7 @@ static DWWXPay *sharedManager = nil;
 }
 
 #pragma mark ---判断当前微信的版本是否支持OpenApi
-+ (BOOL) dw_isWXAppSupportApi {
++ (BOOL)dw_isWXAppSupportApi {
     return [WXApi isWXAppSupportApi];
 }
 

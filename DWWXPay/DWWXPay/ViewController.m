@@ -45,6 +45,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    DWLog(@"用户是否安装微信:%d", [DWWXPay dw_isWXAppInstalled]);
+    
+    DWLog(@"用户微信版本是否支持OpenApi:%d", [DWWXPay dw_isWXAppSupportApi]);
+    
+    DWLog(@"获取微信的itunes安装地址:%@", [DWWXPay dw_getWXAppInstallUrl]);
+    
+    DWLog(@"获取当前微信SDK的版本号:%@", [DWWXPay dw_getApiVersion]);
+    
     /*---------------------------------------微信支付测试------------------------------------------*/
     UIButton *payMoeny = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 200, 100)];
     
