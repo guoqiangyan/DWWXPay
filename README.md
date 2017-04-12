@@ -1,10 +1,14 @@
+# Tip
+- SDK已更新至最新(1.7.7)
+- 在工程配置中的”Other Linker Flags”中加入”-Objc -all_load”(SDK1.7.4中要求)
+- 向微信注册App方法改为***[[DWWXPay dw_sharedManager] dw_RegisterApp:@"appid" enableMTA:YES];***
+
 # 此项目使用Xcode8.1创建，低版本Xcode打开可能会无法使用
 # DWWXPay
 # *已完美支持iOS10,如果您是之前就使用了这个文件，直接替换原文件即可，其它的都不需要改动*
 # 简单两步实现[微信支付与查询订单](https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_1)
 # 如果感觉不错请点击右上角Star
 # 使用中如果遇到问题,可以加群:577506623
-# 向大家推荐一个全新的开发者交流、代码分享平台:[CodeData](http://www.codedata.cn)
 ---
 
 1、iOS 9系统策略更新，限制了http协议的访问，此外应用需要在“Info.plist”中将要使用的URL Schemes列为白名单，才可正常检查其他应用是否安装。
@@ -46,7 +50,9 @@
     #import "DWWXPayH.h"
 ---
 ># *在- (BOOL)application:(UIApplication ＊)application didFinishLaunchingWithOptions:(NSDictionary ＊)launchOptions;*方法中添加以下代码
-     [[DWWXPay dw_sharedManager] dw_RegisterApp:@"你的appid" withDescription:@"你的项目Bundle Identifier"];
+~~[[DWWXPay dw_sharedManager] dw_RegisterApp:@"你的appid" withDescription:@"你的项目Bundle Identifier"];~~
+    
+    [[DWWXPay dw_sharedManager] dw_RegisterApp:@"appid" enableMTA:YES];
      
 ---
 ># 在AppDelegate.m中添加以下三个方法
@@ -108,3 +114,5 @@
 
 	/** 获取当前微信SDK的版本号 */
 	+ (NSString *)dw_getApiVersion;
+
+

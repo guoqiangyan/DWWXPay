@@ -22,7 +22,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     //向微信终端程序注册第三方应用
-    [[DWWXPay dw_sharedManager] dw_RegisterApp:@"appid" withDescription:@"Bundle Identifier"];
+    [[DWWXPay dw_sharedManager] dw_RegisterApp:@"appid" enableMTA:YES];
     
     return YES;
 }

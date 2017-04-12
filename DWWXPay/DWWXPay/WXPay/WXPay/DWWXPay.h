@@ -54,17 +54,16 @@ typedef void(^BackTrade_stateMsg)(NSString *backTrade_stateMsg, NSString *backTr
 /**
  *  单例创建支付对象
  *
- *  @return <#return value description#>
  */
 + (DWWXPay *)dw_sharedManager;
 
 /**
  *  向微信终端程序注册第三方应用。
  *
- *  @param appid   微信开发者ID
- *  @param appdesc 应用附加信息，长度不超过1024字节
+ *  @param appid        微信开发者ID
+ *  @param isEnableMTA  是否支持MTA数据上报
  */
-- (BOOL)dw_RegisterApp:(NSString *)appid withDescription:(NSString *)appdesc;
+- (BOOL)dw_RegisterApp:(NSString *)appid enableMTA:(BOOL)isEnableMTA;
 
 /*!
  *  @author dwang
@@ -82,7 +81,6 @@ typedef void(^BackTrade_stateMsg)(NSString *backTrade_stateMsg, NSString *backTr
  *
  *  @return xmlString
  *
- *  @since <#version number#>
  */
 - (NSString *)dw_payMoenySetAppid:(NSString *)appid Mch_id:(NSString *)mch_id PartnerKey:(NSString *)partnerKey Body:(NSString *)body Out_trade_no:(NSString *)out_trade_no total_fee:(int)total_fee Notify_url:(NSString *)notify_url Trade_type:(NSString *)trade_type;
 
@@ -99,7 +97,6 @@ typedef void(^BackTrade_stateMsg)(NSString *backTrade_stateMsg, NSString *backTr
  *
  *  @return xmlString
  *
- *  @since <#version number#>
  */
 - (NSString *)dw_queryOrderSetAppid:(NSString *)appid Mch_id:(NSString *)mch_id PartnerKey:(NSString *)partnerKey Out_trade_no:(NSString *)out_trade_no;
 
@@ -117,7 +114,6 @@ typedef void(^BackTrade_stateMsg)(NSString *backTrade_stateMsg, NSString *backTr
  *  @param backCode                 微信返回结果的回调
  *  @param backTrade_stateMsg       微信返回的交易状态信息
  *
- *  @since <#version number#>
  */
 - (void)dw_post:(NSString*)url xml:(NSString*)xml return_ErrorCode:(Return_ErrorCode)return_ErrorCode backResp:(BackResp)backResp backCode:(BackCode)backCode BackTrade_stateMsg:(BackTrade_stateMsg)backTrade_stateMsg;
 

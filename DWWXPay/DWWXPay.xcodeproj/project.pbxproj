@@ -39,6 +39,7 @@
 		4AA75DD11D2F918200D7E30A /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DC51D2F918200D7E30A /* NSObject+MJKeyValue.m */; };
 		4AA75DD21D2F918200D7E30A /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DC71D2F918200D7E30A /* NSObject+MJProperty.m */; };
 		4AA75DD31D2F918200D7E30A /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DC91D2F918200D7E30A /* NSString+MJExtension.m */; };
+		8F90544F1E9DD0F500CDFF95 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F90544E1E9DD0F400CDFF95 /* CFNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +99,7 @@
 		4AA75DC81D2F918200D7E30A /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
 		4AA75DC91D2F918200D7E30A /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
 		4AA75DDA1D2F958600D7E30A /* DWWXPayH.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWWXPayH.h; sourceTree = "<group>"; };
+		8F90544E1E9DD0F400CDFF95 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,12 +107,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AA75D9B1D2F82CC00D7E30A /* UIKit.framework in Frameworks */,
+				8F90544F1E9DD0F500CDFF95 /* CFNetwork.framework in Frameworks */,
 				355BF4F21D44B8FC007C49D5 /* libcurses.tbd in Frameworks */,
 				4AA75DA51D2F85F800D7E30A /* libc++.tbd in Frameworks */,
 				4AA75D991D2F82C500D7E30A /* libsqlite3.0.tbd in Frameworks */,
 				4AA75D971D2F82B400D7E30A /* libz.tbd in Frameworks */,
 				35A312491D8A6F6D00B8CECF /* libWeChatSDK.a in Frameworks */,
-				4AA75D9B1D2F82CC00D7E30A /* UIKit.framework in Frameworks */,
 				4AA75D9D1D2F82D900D7E30A /* Foundation.framework in Frameworks */,
 				4AA75D951D2F829C00D7E30A /* SystemConfiguration.framework in Frameworks */,
 				4AA75D931D2F829600D7E30A /* CoreTelephony.framework in Frameworks */,
@@ -156,6 +159,7 @@
 				4AA75D9E1D2F82FA00D7E30A /* Framework */,
 				4AA75D531D2F81F200D7E30A /* DWWXPay */,
 				4AA75D521D2F81F200D7E30A /* Products */,
+				8F90544D1E9DD0F400CDFF95 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -277,6 +281,14 @@
 				4AA75DC91D2F918200D7E30A /* NSString+MJExtension.m */,
 			);
 			path = MJExtension;
+			sourceTree = "<group>";
+		};
+		8F90544D1E9DD0F400CDFF95 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F90544E1E9DD0F400CDFF95 /* CFNetwork.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,6 +503,10 @@
 					"$(PROJECT_DIR)/DWWXPay/WXPay/SDKExport",
 					"$(PROJECT_DIR)/DWWXPay/WXPay/WXAPI",
 				);
+				OTHER_LDFLAGS = (
+					"-Objc",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.dwang.DWWXPay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -508,6 +524,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/DWWXPay/WXPay/SDKExport",
 					"$(PROJECT_DIR)/DWWXPay/WXPay/WXAPI",
+				);
+				OTHER_LDFLAGS = (
+					"-Objc",
+					"-all_load",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.dwang.DWWXPay;
 				PRODUCT_NAME = "$(TARGET_NAME)";

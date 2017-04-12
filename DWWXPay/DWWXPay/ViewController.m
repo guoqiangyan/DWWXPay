@@ -15,7 +15,6 @@
 
 @property (strong, nonatomic) DWWXPay *pay;;
 
-
 @property (weak, nonatomic) UIButton *payMoeny;
 
 @property (weak, nonatomic) UIButton *queryOrder;

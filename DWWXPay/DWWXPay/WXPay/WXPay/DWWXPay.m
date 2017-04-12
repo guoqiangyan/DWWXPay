@@ -57,9 +57,9 @@ static DWWXPay *sharedManager = nil;
 }
 
 #pragma mark ---向微信终端程序注册第三方应用
-- (BOOL)dw_RegisterApp:(NSString *)appid withDescription:(NSString *)appdesc {
+- (BOOL)dw_RegisterApp:(NSString *)appid enableMTA:(BOOL)isEnableMTA {
     
-    BOOL isbool = [WXApi registerApp:appid withDescription:appdesc];
+    BOOL isbool = [WXApi registerApp:appid enableMTA:isEnableMTA];
     
     return isbool;
 }
