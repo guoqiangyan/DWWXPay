@@ -98,7 +98,7 @@ return_ErrorCode:^(NSString *return_msg, NSString *err_code, NSString *err_code_
     } BackTrade_stateMsg:^(NSString *backTrade_stateMsg, NSString *backTrade_state) {
     }];~~
     
-    [pay dw_post:@"https://api.mch.weixin.qq.com/pay/unifiedorder" 
+    [pay dw_requestType:wxPay
     xml:xmlString return_ErrorCode:^(NSString *return_msg, NSString *err_code, NSString *err_code_des) {
         NSLog(@"付款出现错误:%@--%@--%@",return_msg,err_code,err_code_des);
     } backResp:^(BaseResp *backResp) { 
