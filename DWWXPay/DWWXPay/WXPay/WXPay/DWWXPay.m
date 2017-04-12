@@ -10,7 +10,6 @@
 //*******************问题交流QQ群:577506623*************************************
 
 #import "DWWXPay.h"
-#import "MJExtension.h"
 
 #import "DWWXPaySuccessModels.h"
 #import "NSString+Extension.h"
@@ -143,14 +142,14 @@ static DWWXPay *sharedManager = nil;
 }
 
 #pragma mark ---发送微信支付/查询订单请求
-- (void)dw_post:(NSString*)url
+- (void)dw_requestType:(RequestType)requestType
             xml:(NSString*)xml
             return_ErrorCode:(Return_ErrorCode)return_ErrorCode
             backResp:(BackResp)backResp backCode:(BackCode)backCode
             BackTrade_stateMsg:(BackTrade_stateMsg)backTrade_stateMsg {
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]
-                                    initWithURL: [NSURL URLWithString:url]
+                                    initWithURL: [NSURL URLWithString:requestType==wxPay?@"https://api.mch.weixin.qq.com/pay/unifiedorder":@"https://api.mch.weixin.qq.com/pay/orderquery"]
                                     cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
                                     timeoutInterval:12];
     
@@ -170,13 +169,13 @@ static DWWXPay *sharedManager = nil;
             
             NSDictionary* respParams = [DWWXPayXmlParser dw_parseData:data];
             
-            DWWXPaySuccessModels *paySuccessModels = [DWWXPaySuccessModels mj_objectWithKeyValues:respParams];
+            DWWXPaySuccessModels *paySuccessModels = [DWWXPaySuccessModels wxPaySuccessWithDictionary:respParams];
             
             if ([paySuccessModels.return_code isEqualToString:@"SUCCESS"]) {
                 
                 if ([paySuccessModels.result_code isEqualToString:@"SUCCESS"]) {
                     
-                    if ([url isEqualToString:@"https://api.mch.weixin.qq.com/pay/orderquery"]) {
+                    if (requestType == wxOrderquery) {
                         
                         if ([paySuccessModels.trade_state isEqualToString:@"SUCCESS"]) {
                             

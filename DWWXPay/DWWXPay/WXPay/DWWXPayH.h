@@ -11,7 +11,7 @@
 
 #import "DWWXPay.h"
 #import "WXApi.h"
-#import "MJExtension.h"
+
 
 #import "DWWXPaySuccessModels.h"
 #import "NSString+Extension.h"

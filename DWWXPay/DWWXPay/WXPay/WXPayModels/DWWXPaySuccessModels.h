@@ -78,4 +78,8 @@
  */
 @property (copy, nonatomic) NSString *trade_state;
 
+- (instancetype)initWithDictionary:(NSDictionary *)dict;
+
++ (instancetype)wxPaySuccessWithDictionary:(NSDictionary *)dict;
+
 @end

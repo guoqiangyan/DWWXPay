@@ -29,7 +29,7 @@
 			<string>weixin</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>微信分配的appid</string>
+				<string>appid</string>
 			</array>
 		</dict>
 	</array>

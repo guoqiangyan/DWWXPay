@@ -12,6 +12,13 @@
 #import <Foundation/Foundation.h>
 #import "WXApi.h"
 
+typedef enum : NSUInteger {
+    /** 微信支付 */
+    wxPay,
+    /** 订单查询 */
+    wxOrderquery
+} RequestType;
+
 @interface DWWXPay : NSObject<WXApiDelegate>
 
 /** 微信返回结果的回调 */
@@ -38,6 +45,8 @@ typedef void(^BackTrade_stateMsg)(NSString *backTrade_stateMsg, NSString *backTr
 @property (copy, nonatomic) Return_ErrorCode return_ErrorCode;
 
 @property (copy, nonatomic) BackTrade_stateMsg backTrade_stateMsg;
+
+@property(nonatomic, assign) RequestType requestType;
 
 /** 检查是否安装微信 */
 + (BOOL)dw_isWXAppInstalled;
@@ -106,8 +115,7 @@ typedef void(^BackTrade_stateMsg)(NSString *backTrade_stateMsg, NSString *backTr
  *
  *  @brief 发送支付/查询订单网络请求
  *
- *  @param url                      付款:@"https://api.mch.weixin.qq.com/pay/unifiedorder"
- *                                  查询订单:@"https://api.mch.weixin.qq.com/pay/orderquery"
+ *  @param requestType              请求类型
  *  @param xml                      最终发送的XML
  *  @param return_ErrorCode         失败的错误信息
  *  @param backResp                 微信返回内容的回调
@@ -115,7 +123,7 @@ typedef void(^BackTrade_stateMsg)(NSString *backTrade_stateMsg, NSString *backTr
  *  @param backTrade_stateMsg       微信返回的交易状态信息
  *
  */
-- (void)dw_post:(NSString*)url xml:(NSString*)xml return_ErrorCode:(Return_ErrorCode)return_ErrorCode backResp:(BackResp)backResp backCode:(BackCode)backCode BackTrade_stateMsg:(BackTrade_stateMsg)backTrade_stateMsg;
+- (void)dw_requestType:(RequestType)requestType xml:(NSString*)xml return_ErrorCode:(Return_ErrorCode)return_ErrorCode backResp:(BackResp)backResp backCode:(BackCode)backCode BackTrade_stateMsg:(BackTrade_stateMsg)backTrade_stateMsg;
 
 
 @end

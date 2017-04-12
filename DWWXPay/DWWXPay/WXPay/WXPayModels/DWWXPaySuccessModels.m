@@ -10,4 +10,19 @@
 
 @implementation DWWXPaySuccessModels
 
+- (instancetype)initWithDictionary:(NSDictionary *)dict {
+    if (self = [super init]) {
+        [self setValuesForKeysWithDictionary:dict];
+           }
+    return self;
+}
+
++ (instancetype)wxPaySuccessWithDictionary:(NSDictionary *)dict {
+    return [[self alloc] initWithDictionary:dict];
+}
+
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
+   //防止程序case
+}
+
 @end

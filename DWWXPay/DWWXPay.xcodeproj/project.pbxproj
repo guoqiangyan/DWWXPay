@@ -29,16 +29,6 @@
 		4AA75DAC1D2F894400D7E30A /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DAB1D2F894400D7E30A /* NSString+Extension.m */; };
 		4AA75DB01D2F8D4C00D7E30A /* DWWXPayXmlParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DAF1D2F8D4C00D7E30A /* DWWXPayXmlParser.m */; };
 		4AA75DB31D2F90FE00D7E30A /* DWWXPaySuccessModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DB21D2F90FE00D7E30A /* DWWXPaySuccessModels.m */; };
-		4AA75DCA1D2F918200D7E30A /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DB71D2F918200D7E30A /* MJExtensionConst.m */; };
-		4AA75DCB1D2F918200D7E30A /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DB91D2F918200D7E30A /* MJFoundation.m */; };
-		4AA75DCC1D2F918200D7E30A /* MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DBB1D2F918200D7E30A /* MJProperty.m */; };
-		4AA75DCD1D2F918200D7E30A /* MJPropertyKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DBD1D2F918200D7E30A /* MJPropertyKey.m */; };
-		4AA75DCE1D2F918200D7E30A /* MJPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DBF1D2F918200D7E30A /* MJPropertyType.m */; };
-		4AA75DCF1D2F918200D7E30A /* NSObject+MJClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DC11D2F918200D7E30A /* NSObject+MJClass.m */; };
-		4AA75DD01D2F918200D7E30A /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DC31D2F918200D7E30A /* NSObject+MJCoding.m */; };
-		4AA75DD11D2F918200D7E30A /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DC51D2F918200D7E30A /* NSObject+MJKeyValue.m */; };
-		4AA75DD21D2F918200D7E30A /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DC71D2F918200D7E30A /* NSObject+MJProperty.m */; };
-		4AA75DD31D2F918200D7E30A /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75DC91D2F918200D7E30A /* NSString+MJExtension.m */; };
 		8F90544F1E9DD0F500CDFF95 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F90544E1E9DD0F400CDFF95 /* CFNetwork.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,27 +67,6 @@
 		4AA75DAF1D2F8D4C00D7E30A /* DWWXPayXmlParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWWXPayXmlParser.m; sourceTree = "<group>"; };
 		4AA75DB11D2F90FE00D7E30A /* DWWXPaySuccessModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWWXPaySuccessModels.h; sourceTree = "<group>"; };
 		4AA75DB21D2F90FE00D7E30A /* DWWXPaySuccessModels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWWXPaySuccessModels.m; sourceTree = "<group>"; };
-		4AA75DB51D2F918200D7E30A /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
-		4AA75DB61D2F918200D7E30A /* MJExtensionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionConst.h; sourceTree = "<group>"; };
-		4AA75DB71D2F918200D7E30A /* MJExtensionConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionConst.m; sourceTree = "<group>"; };
-		4AA75DB81D2F918200D7E30A /* MJFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJFoundation.h; sourceTree = "<group>"; };
-		4AA75DB91D2F918200D7E30A /* MJFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJFoundation.m; sourceTree = "<group>"; };
-		4AA75DBA1D2F918200D7E30A /* MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJProperty.h; sourceTree = "<group>"; };
-		4AA75DBB1D2F918200D7E30A /* MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJProperty.m; sourceTree = "<group>"; };
-		4AA75DBC1D2F918200D7E30A /* MJPropertyKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyKey.h; sourceTree = "<group>"; };
-		4AA75DBD1D2F918200D7E30A /* MJPropertyKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPropertyKey.m; sourceTree = "<group>"; };
-		4AA75DBE1D2F918200D7E30A /* MJPropertyType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyType.h; sourceTree = "<group>"; };
-		4AA75DBF1D2F918200D7E30A /* MJPropertyType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPropertyType.m; sourceTree = "<group>"; };
-		4AA75DC01D2F918200D7E30A /* NSObject+MJClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJClass.h"; sourceTree = "<group>"; };
-		4AA75DC11D2F918200D7E30A /* NSObject+MJClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJClass.m"; sourceTree = "<group>"; };
-		4AA75DC21D2F918200D7E30A /* NSObject+MJCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJCoding.h"; sourceTree = "<group>"; };
-		4AA75DC31D2F918200D7E30A /* NSObject+MJCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJCoding.m"; sourceTree = "<group>"; };
-		4AA75DC41D2F918200D7E30A /* NSObject+MJKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJKeyValue.h"; sourceTree = "<group>"; };
-		4AA75DC51D2F918200D7E30A /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
-		4AA75DC61D2F918200D7E30A /* NSObject+MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJProperty.h"; sourceTree = "<group>"; };
-		4AA75DC71D2F918200D7E30A /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
-		4AA75DC81D2F918200D7E30A /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
-		4AA75DC91D2F918200D7E30A /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
 		4AA75DDA1D2F958600D7E30A /* DWWXPayH.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWWXPayH.h; sourceTree = "<group>"; };
 		8F90544E1E9DD0F400CDFF95 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -203,7 +172,6 @@
 				4AA75DDA1D2F958600D7E30A /* DWWXPayH.h */,
 				35FB64F31D8A752A005C7078 /* WXPayGetIP */,
 				3530C2761D2FD78A009E6D0E /* WXPay */,
-				4AA75DB41D2F918200D7E30A /* MJExtension */,
 				4AA75DAD1D2F8D1B00D7E30A /* WXPayXML */,
 				4AA75DA91D2F872400D7E30A /* WXPayString */,
 				4AA75DA31D2F845C00D7E30A /* WXPayModels */,
@@ -253,34 +221,6 @@
 				4AA75DAF1D2F8D4C00D7E30A /* DWWXPayXmlParser.m */,
 			);
 			path = WXPayXML;
-			sourceTree = "<group>";
-		};
-		4AA75DB41D2F918200D7E30A /* MJExtension */ = {
-			isa = PBXGroup;
-			children = (
-				4AA75DB51D2F918200D7E30A /* MJExtension.h */,
-				4AA75DB61D2F918200D7E30A /* MJExtensionConst.h */,
-				4AA75DB71D2F918200D7E30A /* MJExtensionConst.m */,
-				4AA75DB81D2F918200D7E30A /* MJFoundation.h */,
-				4AA75DB91D2F918200D7E30A /* MJFoundation.m */,
-				4AA75DBA1D2F918200D7E30A /* MJProperty.h */,
-				4AA75DBB1D2F918200D7E30A /* MJProperty.m */,
-				4AA75DBC1D2F918200D7E30A /* MJPropertyKey.h */,
-				4AA75DBD1D2F918200D7E30A /* MJPropertyKey.m */,
-				4AA75DBE1D2F918200D7E30A /* MJPropertyType.h */,
-				4AA75DBF1D2F918200D7E30A /* MJPropertyType.m */,
-				4AA75DC01D2F918200D7E30A /* NSObject+MJClass.h */,
-				4AA75DC11D2F918200D7E30A /* NSObject+MJClass.m */,
-				4AA75DC21D2F918200D7E30A /* NSObject+MJCoding.h */,
-				4AA75DC31D2F918200D7E30A /* NSObject+MJCoding.m */,
-				4AA75DC41D2F918200D7E30A /* NSObject+MJKeyValue.h */,
-				4AA75DC51D2F918200D7E30A /* NSObject+MJKeyValue.m */,
-				4AA75DC61D2F918200D7E30A /* NSObject+MJProperty.h */,
-				4AA75DC71D2F918200D7E30A /* NSObject+MJProperty.m */,
-				4AA75DC81D2F918200D7E30A /* NSString+MJExtension.h */,
-				4AA75DC91D2F918200D7E30A /* NSString+MJExtension.m */,
-			);
-			path = MJExtension;
 			sourceTree = "<group>";
 		};
 		8F90544D1E9DD0F400CDFF95 /* Frameworks */ = {
@@ -363,23 +303,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AA75D621D2F81F300D7E30A /* DWWXPay.xcdatamodeld in Sources */,
-				4AA75DD21D2F918200D7E30A /* NSObject+MJProperty.m in Sources */,
-				4AA75DCB1D2F918200D7E30A /* MJFoundation.m in Sources */,
-				4AA75DCF1D2F918200D7E30A /* NSObject+MJClass.m in Sources */,
-				4AA75DD31D2F918200D7E30A /* NSString+MJExtension.m in Sources */,
 				4AA75D5C1D2F81F200D7E30A /* ViewController.m in Sources */,
-				4AA75DCE1D2F918200D7E30A /* MJPropertyType.m in Sources */,
-				4AA75DD11D2F918200D7E30A /* NSObject+MJKeyValue.m in Sources */,
 				4AA75D591D2F81F200D7E30A /* AppDelegate.m in Sources */,
 				4AA75D561D2F81F200D7E30A /* main.m in Sources */,
-				4AA75DCC1D2F918200D7E30A /* MJProperty.m in Sources */,
-				4AA75DCA1D2F918200D7E30A /* MJExtensionConst.m in Sources */,
 				3530C2791D2FD78A009E6D0E /* DWWXPay.m in Sources */,
 				35FB64F61D8A754A005C7078 /* DWGetIP.m in Sources */,
 				4AA75DB31D2F90FE00D7E30A /* DWWXPaySuccessModels.m in Sources */,
-				4AA75DD01D2F918200D7E30A /* NSObject+MJCoding.m in Sources */,
 				4AA75DAC1D2F894400D7E30A /* NSString+Extension.m in Sources */,
-				4AA75DCD1D2F918200D7E30A /* MJPropertyKey.m in Sources */,
 				4AA75DB01D2F8D4C00D7E30A /* DWWXPayXmlParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

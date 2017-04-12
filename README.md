@@ -2,6 +2,10 @@
 - SDK已更新至最新(1.7.7)
 - 在工程配置中的”Other Linker Flags”中加入”-Objc -all_load”(SDK1.7.4中要求)
 - 向微信注册App方法改为***[[DWWXPay dw_sharedManager] dw_RegisterApp:@"appid" enableMTA:YES];***
+- 移除MJExtension框架
+- 修改调起支付与查询订单方法
+
+---
 
 # 此项目使用Xcode8.1创建，低版本Xcode打开可能会无法使用
 # DWWXPay
@@ -45,9 +49,12 @@
 ---
 ## 第一步
     将DEMO中的WXPay文件夹导入到项目中
-    ---
+    
+
+---
     在AppDelegate中导入头文件
     #import "DWWXPayH.h"
+    
 ---
 ># *在- (BOOL)application:(UIApplication ＊)application didFinishLaunchingWithOptions:(NSDictionary ＊)launchOptions;*方法中添加以下代码
 ~~[[DWWXPay dw_sharedManager] dw_RegisterApp:@"你的appid" withDescription:@"你的项目Bundle Identifier"];~~
@@ -80,7 +87,16 @@
      NSString *xmlString = [pay dw_payMoenySetAppid:@"appid" Mch_id:@"商户id" PartnerKey:@"密钥" Body:@"商品信息" Out_trade_no:@"订单号必需为新的订单号，不可以是以存在的订单号" total_fee:1 Notify_url:@"回调地址" Trade_type:@"类型"];
     
 ----
-	[pay dw_post:@"https://api.mch.weixin.qq.com/pay/unifiedorder" xml:xmlString return_ErrorCode:^(NSString *return_msg, NSString *err_code, NSString *err_code_des) {
+~~[pay dw_post:@"https://api.mch.weixin.qq.com/pay/unifiedorder" xml:xmlString return_ErrorCode:^(NSString *return_msg, NSString *err_code, NSString *err_code_des) {
+        NSLog(@"付款出现错误:%@--%@--%@",return_msg,err_code,err_code_des);
+    } backResp:^(BaseResp *backResp) { 
+	//        NSLog(@"微信返回内容");
+    } backCode:^(NSString *backCode) { 
+        NSLog(@"微信支付返回结果为:%@",backCode);
+    } BackTrade_stateMsg:^(NSString *backTrade_stateMsg, NSString *backTrade_state) {
+    }];~~
+    
+    [pay dw_post:@"https://api.mch.weixin.qq.com/pay/unifiedorder" xml:xmlString return_ErrorCode:^(NSString *return_msg, NSString *err_code, NSString *err_code_des) {
         NSLog(@"付款出现错误:%@--%@--%@",return_msg,err_code,err_code_des);
     } backResp:^(BaseResp *backResp) { 
 	//        NSLog(@"微信返回内容");
@@ -93,11 +109,19 @@
 	 NSString *xmlString = [pay dw_queryOrderSetAppid:@"appid" Mch_id:@"商户id" PartnerKey:@"商户密钥" Out_trade_no:@"订单号"];
 	 
 ---
-    [pay dw_post:@"https://api.mch.weixin.qq.com/pay/orderquery" xml:xmlString return_ErrorCode:^(NSString *return_msg, NSString *err_code, NSString *err_code_des) {
+~~[pay dw_post:@"https://api.mch.weixin.qq.com/pay/orderquery" xml:xmlString return_ErrorCode:^(NSString *return_msg, NSString *err_code, NSString *err_code_des) {
     } backResp:^(BaseResp *backResp) { 
     } backCode:^(NSString *backCode) {
     }BackTrade_stateMsg:^(NSString *backTrade_stateMsg, NSString *backTrade_state) {
-        
+        NSLog(@"返回订单状态%@------返回订单状态码%@",backTrade_stateMsg,backTrade_state);
+   	}];~~
+   	
+   	[pay dw_requestType:wxOrderquery
+   	 xml:xmlString 
+   	 return_ErrorCode:^(NSString *return_msg, NSString *err_code, NSString *err_code_des) {
+    } backResp:^(BaseResp *backResp) { 
+    } backCode:^(NSString *backCode) {
+    }BackTrade_stateMsg:^(NSString *backTrade_stateMsg, NSString *backTrade_state) {
         NSLog(@"返回订单状态%@------返回订单状态码%@",backTrade_stateMsg,backTrade_state);
    	}];
     
