@@ -87,7 +87,9 @@
      NSString *xmlString = [pay dw_payMoenySetAppid:@"appid" Mch_id:@"商户id" PartnerKey:@"密钥" Body:@"商品信息" Out_trade_no:@"订单号必需为新的订单号，不可以是以存在的订单号" total_fee:1 Notify_url:@"回调地址" Trade_type:@"类型"];
     
 ----
-~~[pay dw_post:@"https://api.mch.weixin.qq.com/pay/unifiedorder" xml:xmlString return_ErrorCode:^(NSString *return_msg, NSString *err_code, NSString *err_code_des) {
+~~[pay dw_post:@"https://api.mch.weixin.qq.com/pay/unifiedorder" 
+xml:xmlString 
+return_ErrorCode:^(NSString *return_msg, NSString *err_code, NSString *err_code_des) {
         NSLog(@"付款出现错误:%@--%@--%@",return_msg,err_code,err_code_des);
     } backResp:^(BaseResp *backResp) { 
 	//        NSLog(@"微信返回内容");
@@ -96,7 +98,8 @@
     } BackTrade_stateMsg:^(NSString *backTrade_stateMsg, NSString *backTrade_state) {
     }];~~
     
-    [pay dw_post:@"https://api.mch.weixin.qq.com/pay/unifiedorder" xml:xmlString return_ErrorCode:^(NSString *return_msg, NSString *err_code, NSString *err_code_des) {
+    [pay dw_post:@"https://api.mch.weixin.qq.com/pay/unifiedorder" 
+    xml:xmlString return_ErrorCode:^(NSString *return_msg, NSString *err_code, NSString *err_code_des) {
         NSLog(@"付款出现错误:%@--%@--%@",return_msg,err_code,err_code_des);
     } backResp:^(BaseResp *backResp) { 
 	//        NSLog(@"微信返回内容");
@@ -109,7 +112,9 @@
 	 NSString *xmlString = [pay dw_queryOrderSetAppid:@"appid" Mch_id:@"商户id" PartnerKey:@"商户密钥" Out_trade_no:@"订单号"];
 	 
 ---
-~~[pay dw_post:@"https://api.mch.weixin.qq.com/pay/orderquery" xml:xmlString return_ErrorCode:^(NSString *return_msg, NSString *err_code, NSString *err_code_des) {
+~~[pay dw_post:@"https://api.mch.weixin.qq.com/pay/orderquery" 
+xml:xmlString 
+return_ErrorCode:^(NSString *return_msg, NSString *err_code, NSString *err_code_des) {
     } backResp:^(BaseResp *backResp) { 
     } backCode:^(NSString *backCode) {
     }BackTrade_stateMsg:^(NSString *backTrade_stateMsg, NSString *backTrade_state) {
