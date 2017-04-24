@@ -1,7 +1,7 @@
 # Tip
 - SDK已更新至最新(1.7.7)
 - 在工程配置中的”Other Linker Flags”中加入”-Objc -all_load”(SDK1.7.4中要求)
-- 向微信注册App方法改为***[[DWWXPay dw_sharedManager] dw_RegisterApp:@"appid" enableMTA:YES];***
+- 向微信注册App方法改为 ***[[DWWXPay dw_sharedManager] dw_RegisterApp:@"appid" enableMTA:YES];***
 - 移除MJExtension框架
 - 修改调起支付与查询订单方法
 
