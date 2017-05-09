@@ -1,4 +1,5 @@
 [![GitHub stars](https://img.shields.io/github/stars/dwanghello/DWWXPay.svg)](https://github.com/asiosldh/DWWXPay/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/dwanghello/DWWXPay.svg)](https://github.com/asiosldh/DWWXPay/forkgazers)
 
 ![logo](https://github.com/dwanghello/DWWXPay/blob/master/WeChatPay.png)
 # Tip
