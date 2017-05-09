@@ -13,8 +13,13 @@
 # 此项目使用Xcode8.1创建，低版本Xcode打开可能会无法使用
 # *已完美支持iOS10,如果您是之前就使用了这个文件，直接替换原文件即可，其它的都不需要改动*
 # [微信官方文档](https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_1)
-# 如果感觉不错请点击右上角Star
-# 使用中如果遇到问题,可以加群:577506623
+### *如果感觉不错，请给个Star支持一下*
+#### *使用中如果遇到什么问题可以联系我*
+##### *[QQ:739814184|点击即可扫码添加](https://github.com/dwanghello/DWTransform/blob/master/QQ.png)* 
+##### *[微信:ai739814184|点击即可扫码添加](https://github.com/dwanghello/DWTransform/blob/master/WeChat.png)*
+##### *QQ群:577506623*
+![QQ群](https://github.com/dwanghello/DWTransform/blob/master/QQ群.png)
+##### *e-mail:dwang.hello@outlook.com*
 ---
 
 1、iOS 9系统策略更新，限制了http协议的访问，此外应用需要在“Info.plist”中将要使用的URL Schemes列为白名单，才可正常检查其他应用是否安装。
