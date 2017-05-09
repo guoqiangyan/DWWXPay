@@ -1,3 +1,4 @@
+[![GitHub stars](https://img.shields.io/github/stars/dwanghello/DWWXPay.svg)](https://github.com/asiosldh/DWWXPay/stargazers)
 # Tip
 - SDK已更新至最新(1.7.7)
 - 在工程配置中的”Other Linker Flags”中加入”-Objc -all_load”(SDK1.7.4中要求)
