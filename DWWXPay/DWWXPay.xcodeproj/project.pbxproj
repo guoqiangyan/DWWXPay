@@ -10,7 +10,6 @@
 		3530C2791D2FD78A009E6D0E /* DWWXPay.m in Sources */ = {isa = PBXBuildFile; fileRef = 3530C2781D2FD78A009E6D0E /* DWWXPay.m */; };
 		355BF4F21D44B8FC007C49D5 /* libcurses.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 355BF4F11D44B8FC007C49D5 /* libcurses.tbd */; };
 		35A312491D8A6F6D00B8CECF /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A312451D8A6F6D00B8CECF /* libWeChatSDK.a */; };
-		35FB64F61D8A754A005C7078 /* DWGetIP.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FB64F51D8A754A005C7078 /* DWGetIP.m */; };
 		4AA75D561D2F81F200D7E30A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75D551D2F81F200D7E30A /* main.m */; };
 		4AA75D591D2F81F200D7E30A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75D581D2F81F200D7E30A /* AppDelegate.m */; };
 		4AA75D5C1D2F81F200D7E30A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA75D5B1D2F81F200D7E30A /* ViewController.m */; };
@@ -40,8 +39,6 @@
 		35A312461D8A6F6D00B8CECF /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
 		35A312471D8A6F6D00B8CECF /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		35A312481D8A6F6D00B8CECF /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
-		35FB64F41D8A754A005C7078 /* DWGetIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWGetIP.h; sourceTree = "<group>"; };
-		35FB64F51D8A754A005C7078 /* DWGetIP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWGetIP.m; sourceTree = "<group>"; };
 		4AA75D511D2F81F200D7E30A /* DWWXPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DWWXPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AA75D551D2F81F200D7E30A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4AA75D571D2F81F200D7E30A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -113,15 +110,6 @@
 			path = WXAPI;
 			sourceTree = "<group>";
 		};
-		35FB64F31D8A752A005C7078 /* WXPayGetIP */ = {
-			isa = PBXGroup;
-			children = (
-				35FB64F41D8A754A005C7078 /* DWGetIP.h */,
-				35FB64F51D8A754A005C7078 /* DWGetIP.m */,
-			);
-			path = WXPayGetIP;
-			sourceTree = "<group>";
-		};
 		4AA75D481D2F81F200D7E30A = {
 			isa = PBXGroup;
 			children = (
@@ -170,7 +158,6 @@
 			isa = PBXGroup;
 			children = (
 				4AA75DDA1D2F958600D7E30A /* DWWXPayH.h */,
-				35FB64F31D8A752A005C7078 /* WXPayGetIP */,
 				3530C2761D2FD78A009E6D0E /* WXPay */,
 				4AA75DAD1D2F8D1B00D7E30A /* WXPayXML */,
 				4AA75DA91D2F872400D7E30A /* WXPayString */,
@@ -307,7 +294,6 @@
 				4AA75D591D2F81F200D7E30A /* AppDelegate.m in Sources */,
 				4AA75D561D2F81F200D7E30A /* main.m in Sources */,
 				3530C2791D2FD78A009E6D0E /* DWWXPay.m in Sources */,
-				35FB64F61D8A754A005C7078 /* DWGetIP.m in Sources */,
 				4AA75DB31D2F90FE00D7E30A /* DWWXPaySuccessModels.m in Sources */,
 				4AA75DAC1D2F894400D7E30A /* NSString+Extension.m in Sources */,
 				4AA75DB01D2F8D4C00D7E30A /* DWWXPayXmlParser.m in Sources */,

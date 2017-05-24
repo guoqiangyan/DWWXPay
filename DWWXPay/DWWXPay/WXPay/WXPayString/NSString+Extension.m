@@ -7,7 +7,12 @@
 //
 
 #import "NSString+Extension.h"
-#import "DWGetIP.h"
+#import <sys/socket.h>
+#import <sys/sockio.h>
+#import <sys/ioctl.h>
+#import <net/if.h>
+#import <arpa/inet.h>
+
 
 @implementation NSString (Extension)
 
@@ -61,28 +66,83 @@
 }
 
 #pragma mark ---获取IP地址
-+ (NSString *)dw_getIPAddress
-{
-    InitAddresses();
-    GetIPAddresses();
-    GetHWAddresses();
++ (NSString *)dw_getIPAddress {
     
-    int i;
-    //    NSString *deviceIP = nil;
-    for (i=0; i<MAXADDRS; ++i)
-    {
-        static unsigned long localHost = 0x7F000001;            // 127.0.0.1
-        unsigned long theAddr;
+    int sockfd =socket(AF_INET,SOCK_DGRAM, 0);
+    
+    //    if (sockfd <</span> 0) return nil;
+    
+    NSMutableArray *ips = [NSMutableArray array];
+    
+    int BUFFERSIZE =4096;
+    
+    struct ifconf ifc;
+    
+    char buffer[BUFFERSIZE], *ptr, lastname[IFNAMSIZ], *cptr;
+    
+    struct ifreq *ifr, ifrcopy;
+    
+    ifc.ifc_len = BUFFERSIZE;
+    
+    ifc.ifc_buf = buffer;
+    
+    if (ioctl(sockfd,SIOCGIFCONF, &ifc) >= 0){
         
-        theAddr = ip_addrs[i];
+        for (ptr = buffer; ptr < buffer + ifc.ifc_len; ){
+            
+            ifr = (struct ifreq *)ptr;
+            
+            int len =sizeof(struct sockaddr);
+            
+            if (ifr->ifr_addr.sa_len > len) {
+                
+                len = ifr->ifr_addr.sa_len;
+                
+            }
+            
+            ptr += sizeof(ifr->ifr_name) + len;
+            
+            if (ifr->ifr_addr.sa_family !=AF_INET) continue;
+            
+            if ((cptr = (char *)strchr(ifr->ifr_name,':')) != NULL) *cptr =0;
+            
+            if (strncmp(lastname, ifr->ifr_name,IFNAMSIZ) == 0)continue;
+            
+            memcpy(lastname, ifr->ifr_name,IFNAMSIZ);
+            
+            ifrcopy = *ifr;
+            
+            ioctl(sockfd,SIOCGIFFLAGS, &ifrcopy);
+            
+            if ((ifrcopy.ifr_flags &IFF_UP) == 0)continue;
+            
+            
+            
+            NSString *ip = [NSString stringWithFormat:@"%s",inet_ntoa(((struct sockaddr_in *)&ifr->ifr_addr)->sin_addr)];
+            
+            [ips addObject:ip];
+            
+        }
         
-        if (theAddr == 0) break;
-        if (theAddr == localHost) continue;
-        
-        return [NSString stringWithFormat:@"%s",ip_names[i]];
     }
     
-    return @"192.168.0.1";
+    close(sockfd);
+    
+    NSString *deviceIP =@"";
+    
+    for (int i=0; i < ips.count; i++)
+        
+    {
+        
+        if (ips.count >0)
+            
+        {
+            deviceIP = [NSString stringWithFormat:@"%@",ips.lastObject];
+        }
+        
+    }
+    return deviceIP;
+    
 }
 
 #pragma mark ---获取随机数
@@ -109,15 +169,15 @@
 
 #pragma mark ---支付xmlString
 + (NSString *)dw_payMoenyGetXmlAppid:(NSString *)appid
-                               Mch_id:(NSString *)mch_id
-                                Nonce_str:(NSString *)nonce_str
+                              Mch_id:(NSString *)mch_id
+                           Nonce_str:(NSString *)nonce_str
                                 Sign:(NSString *)sign
                                 Body:(NSString *)body
-                                Out_trade_no:(NSString *)out_trade_no
-                                Total_fee:(int)total_fee
-                                Spbill_create_ip:(NSString *)spbill_create_ip
-                                Notify_url:(NSString *)notify_url
-                                Trade_type:(NSString *)trade_type {
+                        Out_trade_no:(NSString *)out_trade_no
+                           Total_fee:(int)total_fee
+                    Spbill_create_ip:(NSString *)spbill_create_ip
+                          Notify_url:(NSString *)notify_url
+                          Trade_type:(NSString *)trade_type {
     
     NSString *xmlString = [NSString stringWithFormat:@"<xml><appid>%@</appid><body>%@</body><mch_id>%@</mch_id><nonce_str>%@</nonce_str><notify_url>%@</notify_url><out_trade_no>%@</out_trade_no><spbill_create_ip>%@</spbill_create_ip><total_fee>%d</total_fee><trade_type>%@</trade_type><sign>%@</sign></xml>",
                            appid,
@@ -137,10 +197,10 @@
 
 #pragma mark ---查询订单xmlString
 + (NSString *)dw_queryOrderGetXmlAppid:(NSString *)appid
-                                 Mch_id:(NSString *)mch_id
-                                 Nonce_str:(NSString *)nonce_str
-                                 Out_trade_no:(NSString *)out_trade_no
-                                 Sign:(NSString *)sign {
+                                Mch_id:(NSString *)mch_id
+                             Nonce_str:(NSString *)nonce_str
+                          Out_trade_no:(NSString *)out_trade_no
+                                  Sign:(NSString *)sign {
     
     NSString *xmlString = [NSString stringWithFormat:@"<xml><appid>%@</appid><mch_id>%@</mch_id><nonce_str>%@</nonce_str><out_trade_no>%@</out_trade_no><sign>%@</sign></xml>",
                            appid,
