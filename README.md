@@ -2,7 +2,8 @@
 [![GitHub forks](https://img.shields.io/github/forks/dwanghello/DWWXPay.svg)](https://github.com/asiosldh/DWWXPay/forkgazers)
 
 ![logo](https://github.com/dwanghello/DWWXPay/blob/master/WeChatPay.png)
-# [<h1>作者极力推荐:<h5>基于微信SDK1.7.7,支持登录授权、支付、订单状态查询、分享，一句代码搞定这些功能,点此跳转](https://github.com/dwanghello/DWWXSDK)
+# [作者极力推荐:基于微信SDK1.7.7,支持登录授权、支付、订单状态查询、分享，一句代码搞定这些功能,点此跳转](https://github.com/dwanghello/DWWXSDK)
+![DWWXSDK](https://github.com/dwanghello/DWWXPay/blob/master/DWWXSDK.png)
 # Tip
 - SDK已更新至最新(1.7.7)
 - 在工程配置中的”Other Linker Flags”中加入”-Objc -all_load”(SDK1.7.4中要求)
