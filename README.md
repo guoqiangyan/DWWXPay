@@ -1,3 +1,6 @@
+# 当前文件将不会更新，如有需要请使用[DWWXSDK](https://github.com/dwanghello/DWWXSDK)或加入QQ群：577506623
+
+---
 [![GitHub stars](https://img.shields.io/github/stars/dwanghello/DWWXPay.svg)](https://github.com/asiosldh/DWWXPay/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/dwanghello/DWWXPay.svg)](https://github.com/asiosldh/DWWXPay/forkgazers)
 
